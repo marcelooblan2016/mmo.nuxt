@@ -134,7 +134,7 @@ export default {
                 {
                     company: "Yondu, Inc.",
                     location: "Bonifacio Global City, Taguig, Metro Manila, Philippines",
-                    type: "Office",
+                    type: "On-Site",
                     time_frame: "Sep 2016 - Sep 2018",
                     title: "Back End Software Engineer",
                     description: [
@@ -147,7 +147,7 @@ export default {
                 {
                     company: "International Payments Processing",
                     location: "Puerto Princesa City, Palawan, Philippines",
-                    type: "Office",
+                    type: "On-Site",
                     time_frame: "Aug 2012 - Sep 2016",
                     title: "Full Stack Web Developer",
                     description: [

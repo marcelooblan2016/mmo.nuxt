@@ -17,7 +17,7 @@
 									<h2 class="text-2xl text-center lg:text-left mt-0 mb-2">
 									    <span class="text-2xl" v-text="experience.company"></span><br/>
 									    <span class="text-lg text-gray-500" v-text="experience.type"></span>
-										
+										&nbsp;
 									    <span class="text-lg text-gray-500" v-text="experience.time_frame"></span>
 									</h2>
 									<p v-html="`<span class='fa fa-map-pin text-gray-500'></span>&nbsp;${experience.location}`" class="text-left text-lg text-gray-500"></p>
