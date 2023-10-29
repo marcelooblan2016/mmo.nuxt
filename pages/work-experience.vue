@@ -14,10 +14,11 @@
 							<div class="p-5 min-h-[100px] bg-[rgba(255,255,255,0.6)] border border-2 border-gray-100] border-3 rounded-md shadow-[10px_10px_0px_0px_rgba(0,0,0,0.5)] text-center">
 								<div class="px-3 md:px-[2em] pb-[1em]">
 									<!-- Experiece -->
-									<h2 class="text-2xl text-left font-normal leading-normal mt-0 mb-2">
-									    <span class="text-2xl" v-text="experience.company"></span>&nbsp;&bullet;&nbsp;
-									    <span class="text-2xl" v-text="experience.type"></span>&nbsp;&bullet;&nbsp;
-									    <span class="text-2xl" v-text="experience.time_frame"></span>
+									<h2 class="text-2xl text-center lg:text-left mt-0 mb-2">
+									    <span class="text-2xl" v-text="experience.company"></span><br/>
+									    <span class="text-lg text-gray-500" v-text="experience.type"></span>
+										
+									    <span class="text-lg text-gray-500" v-text="experience.time_frame"></span>
 									</h2>
 									<p v-html="`<span class='fa fa-map-pin text-gray-500'></span>&nbsp;${experience.location}`" class="text-left text-lg text-gray-500"></p>
 									<!-- Experience Description -->
