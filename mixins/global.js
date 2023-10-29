@@ -83,8 +83,7 @@ export default {
                     type: "DevOps",
                     lists: [
                         "Github Actions: CI/CD",
-                        "AWS (EC2, S3)",
-                        "Envoyer"
+                        "Envoyer",
                     ],
                 },
                 {
@@ -100,12 +99,12 @@ export default {
                     lists: [
                         "TDD (PHPUNIT), AGILE",
                         "Git / Git Flow",
-                        "Gihub, Bitbucket",
+                        "Github, Bitbucket",
                         "NPM", 
                         "Command Line / SSH",
                         "SEO",
                         "Linux (Ubuntu, Centos, Amazon Linux)",
-                        "Hosting / Deployment: Envoyer, AWS, Digital Ocean, Namecheap, Hostinger"
+                        "Hosting / Deployment: AWS, Digital Ocean, Namecheap, Hostinger"
                     ],
                 }
             ],
