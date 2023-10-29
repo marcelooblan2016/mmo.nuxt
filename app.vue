@@ -15,7 +15,7 @@ export default {
                 { property:"og:type", content: 'website' },
                 { property:"og:title", content: 'About | Marcelo Oblan' },
                 { property:"og:description", content: 'Software engineer / Fullstack web developer (Laravel | Vuejs | LAMP)' },
-                { property:"og:image", content: 'https://marcelooblan2016.github.io/images/profile-seo.jpg' },
+                { property:"og:image", content: 'http://marcelooblan2016.github.io/images/profile-seo.jpg' },
                 { property:"og:image:url", content: 'https://marcelooblan2016.github.io/images/profile-seo.jpg' },
                 { property:"og:image:secure_url", content: 'https://marcelooblan2016.github.io/images/profile-seo.jpg' },
                 { property:"og:site_name", content: 'About | Marcelo Oblan' },

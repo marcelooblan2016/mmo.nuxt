@@ -19,7 +19,7 @@
 									    <span class="text-2xl" v-text="experience.type"></span>&nbsp;&bullet;&nbsp;
 									    <span class="text-2xl" v-text="experience.time_frame"></span>
 									</h2>
-									<p x-html="`<span class='fa fa-map-pin text-gray-500'></span>&nbsp;${experience.location}`" class="text-left text-lg text-gray-500"></p>
+									<p v-html="`<span class='fa fa-map-pin text-gray-500'></span>&nbsp;${experience.location}`" class="text-left text-lg text-gray-500"></p>
 									<!-- Experience Description -->
 									<template v-for="list in experience.description">
 										<p v-html="`<span class='fa fa-minus text-gray-500'></span>&nbsp;` + list" class="text-left" :class="{'text-amber-900': list.includes('Skills:')}"></p>
