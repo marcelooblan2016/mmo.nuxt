@@ -1,7 +1,7 @@
 <template>
   <header>
         <!-- Menu -->
-        <nav class="w-full bg-[rgba(0,0,0,.8)] md:bg-[rgba(255,255,255,.9)] block px-2 sm:px-4 py-2.5 fixed lg:shadow-md">
+        <nav class="z-50 w-full bg-[rgba(0,0,0,.8)] md:bg-[rgba(255,255,255,.9)] block px-2 sm:px-4 py-2.5 fixed lg:shadow-md">
 			<div class="container flex flex-wrap justify-between items-center mx-auto w-full">
 			    <NuxtLink v-bind:to="findMenuBySlug('about').value" class="flex items-center">
 				    <img src="/images/favicon.png" class="mr-3 h-6 sm:h-9" alt="Marx Logo" />
