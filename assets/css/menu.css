@@ -38,7 +38,7 @@
     position: absolute;
     content: "";
     display: block;
-    background-image: url('~/images/colorful-abstract.jpg');
+    background-image: url('/images/colorful-abstract.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
