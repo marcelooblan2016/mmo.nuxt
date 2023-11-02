@@ -15,7 +15,7 @@
 		<!-- Footer -->
 		<footer class="p-4 text-gray-400 bg-slate-100 border-t-[1px] border-gray-300">
 			<span class="block text-sm text-center">
-				© <span x-text="footer.year"></span>. All Rights Reserved.
+				© <span x-text="footer.year"></span> All Rights Reserved.
 			</span>
 		</footer>
     </div>
