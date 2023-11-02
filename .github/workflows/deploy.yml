@@ -1,0 +1,22 @@
+name: Deploy Production
+
+on:
+  push:
+    branches: [main]
+jobs:
+  deploy:
+    name: Deploy Production
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy to Production
+        uses: appleboy/ssh-action@master
+        with:
+          username: ${{ secrets.SSH_USERNAME }}
+          host: ${{ secrets.SSH_HOST }}
+          key: ${{ secrets.SSH_KEY }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd /var/www/moblan.dev
+            . deploy.sh
