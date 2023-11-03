@@ -16,7 +16,10 @@
 								<div class="p-6 w-full bg-[rgba(255,255,255,0)] rounded-lg my-1">
 									<div>
 										<div class="my-2">
-                                            <v-lazy-image draggable="false" class="object-contain h-auto w-full p-1 bg-gray-600 border border-1 border-gray-300 rounded min-h-[250px] md:min-h-[300px]" v-bind:src="`/images/portfolio/${frontPhoto(portfolio.photos)}`" />
+                                            <v-lazy-image draggable="false" class="object-contain h-auto w-full p-1 bg-gray-600 border border-1 border-gray-300 rounded min-h-[250px] md:min-h-[300px]" 
+                                            v-bind:src="`/images/portfolio/${frontPhoto(portfolio.photos)}`"
+                                            :src-placeholder="loadingImg"
+                                             />
 										</div>
 										<h2 class="text-2xl text-center font-normal leading-normal mt-0" v-text="portfolio.title"></h2>
 										<hr class="w-[20%] border-gray-300 mx-auto mb-1"/>
@@ -57,4 +60,5 @@ export default {
         return {};
     },
 }
+
 </script>

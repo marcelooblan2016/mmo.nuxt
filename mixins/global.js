@@ -27,7 +27,7 @@ export default {
                 summary: 'I have been professionally engaged as a web developer since 2012, with a specialization in full-stack development. Over the years, I have cultivated extensive expertise by actively contributing to a diverse array of projects, encompassing various domains such as WiFi hotspots, online refund systems, eCommerce, and Software as a Service (SaaS) solutions. My portfolio is a testament to a rich and multifaceted experience, incorporating a blend of freelance and full-time project-based engagements.',
                 profileImg: '/images/profile-picture-ph.jpg',
             },
-
+            loadingImg: '/images/checkered.webp',
             social: {
                 github: {
                     text: 'github.com/marcelooblan2016',

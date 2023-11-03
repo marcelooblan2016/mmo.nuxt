@@ -2,7 +2,10 @@
     <div class="flex sm:h-auto">
         <div class="m-auto">
             <div class="flex flex-col justify-center items-center px-2 py-2 mt-[5em] md:mt-[4em]">
-                <img draggable="false" class="w-[150px] h-[150px] rounded-full ring-[1px] ring-gray-400 shadow-md" v-bind:src="person.profileImg" />
+                <v-lazy-image draggable="false" class="w-[150px] h-[150px] rounded-full ring-[1px] ring-gray-400 shadow-md" 
+                    v-bind:src="person.profileImg"
+                    :src-placeholder="loadingImg"
+                />
             </div>
             <div>
                 <!-- Name -->
@@ -27,7 +30,11 @@
                         <a target="_blank" v-bind:href="social.github.value" class="text-gray-600 text-sm font-bold underline inline-block">See Reference</a>
                     </p>
                     <hr class="my-2"/>
-                    <img class="w-full h-auto" :src="chartSrc" draggable="false"/>
+                    <v-lazy-image 
+                        class="w-full h-auto" 
+                        :src="chartSrc" 
+                        :src-placeholder="loadingImg"
+                    draggable="false"/>
                 </div>
                 <div class="text-center mt-[2em] md:mt-[3em] h-auto">
                     <NuxtLink v-bind:to="findMenuBySlug('portfolio').value" class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 border-b-4 border-gray-400 hover:border-gray-500 rounded block md:inline-block mx-1">
@@ -59,7 +66,12 @@
 </template>
 <script>
 import global from '~/mixins/global.js';
+import VLazyImage from "v-lazy-image";
+
 export default {
+    components: {
+        VLazyImage
+    },
     mixins: [global],
     setup () {
         return {};
