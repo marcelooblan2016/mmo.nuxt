@@ -3,9 +3,9 @@
         <!-- Menu -->
         <nav class="z-50 w-full bg-[rgba(0,0,0,.8)] md:bg-[rgba(255,255,255,.9)] block px-2 sm:px-4 py-2.5 fixed lg:shadow-md">
 			<div class="container flex flex-wrap justify-between items-center mx-auto w-full">
-			    <NuxtLink v-bind:to="findMenuBySlug('about').value" class="flex items-center">
-				    <img src="/images/favicon.png" class="mr-3 h-6 sm:h-9" alt="Marx Logo" />
-				    <span class="text-gray-400" v-text="quote"></span>
+			    <NuxtLink v-bind:to="findMenuBySlug('about').value" class="flex items-center" draggable="false">
+				    <img src="/images/mmo.webp" class="mr-3 w-[100px] h-auto" alt="Marx Logo" draggable="false" />
+				    <span class="text-gray-400 font-bold" v-text="quote"></span>
 			    </NuxtLink>
 				<template v-if="isOpen == false">
 					<button data-collapse-toggle="navbar-default" type="button" 
@@ -13,8 +13,8 @@
 					aria-controls="navbar-default" aria-expanded="false"
 					@click.prevent="isOpen = true;"
 					>
-						<span class="sr-only">Open main menu</span>
-						<svg class="w-6 h-6 text-white md:text-black" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+						<span class="sr-only">Open main menu</span> 
+						<svg class="w-6 h-6 text-white md:text-blue-800 font-bold" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
 				    </button>
                 </template>
 				<template v-if="isOpen == true">
