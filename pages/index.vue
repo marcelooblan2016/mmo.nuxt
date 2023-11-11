@@ -60,6 +60,19 @@
                 <!-- Testimonials -->
                 <Testimonials />
                 <!-- End Testimonials -->
+                <!-- Portfolio -->
+                <h1 class="text-4xl text-center font-normal leading-normal mb-2 mt-[2rem] md:mt-[2rem]">
+                    <span class="title-font text-gray-500">Latest Works</span>
+                    <span class="fa fa-star-o align-middle mx-3"></span>
+                </h1>
+                <hr class="my-2 h-px border-dashed border-2 border-slate-300" />
+                <Portfolio :portofolioItems="portfolioItems" />
+                <div class="text-center mt-[2em] md:mt-[3em] h-auto">
+                    <NuxtLink v-bind:to="findMenuBySlug('portfolio').value" class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 border-b-4 border-gray-400 hover:border-gray-500 rounded block md:inline-block mx-1 min-w-[200px]">
+                        See More
+                    </NuxtLink>
+                </div>
+                <!-- End Portfolio -->
             </div>
         </div>
     </div>
@@ -75,6 +88,12 @@ export default {
     mixins: [global],
     setup () {
         return {};
+    },
+    computed: {
+        portfolioItems () {
+
+            return this.portfolios.slice(0, 2);
+        }
     },
 
     data () {

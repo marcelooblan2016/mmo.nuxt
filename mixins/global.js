@@ -59,7 +59,8 @@ export default {
                         "Alpine.js",
                         "CSS / SCSS",
                         "TailwindCSS",
-                        "Bootstrap"
+                        "Bootstrap",
+                        "Wordpress"
                     ],
                 },
                 {
