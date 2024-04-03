@@ -31,7 +31,7 @@
                     </p>
                     <hr class="my-2"/>
                     <v-lazy-image 
-                        class="w-full h-auto" 
+                        class="w-full h-auto max-h-[250px]" 
                         :src="chartSrc" 
                         :src-placeholder="loadingImg"
                     draggable="false"/>

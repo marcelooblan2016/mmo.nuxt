@@ -111,10 +111,21 @@ export default {
             ],
             experiences: [
                 {
+                    company: "AFX Research, LLC",
+                    location: "San Luis Obispo, California, United States",
+                    type: "Remote",
+                    time_frame: "Nov 2023 - Present",
+                    title: "Senior Full Stack Developer",
+                    description: [
+                        "Team member as a developer at documerge.ai primarily focuses on integration tasks, implementing new features, and bug fixing.",
+                        "Skills: Laravel, Vue.js, Inertia.js, MySql, Tailwind, Git"
+                    ]
+                },
+                {
                     company: "AllCars.com",
                     location: "Webster, New York, United States",
                     type: "Remote",
-                    time_frame: "2020 - Present",
+                    time_frame: "2020 - Nov 2023",
                     title: "Software Engineer / FullStack",
                     description: [
                         "Develop a platform for purchasing and selling pre-owned vehicles on the internet. This project involves generating novel functionalities, ensuring smooth operation, resolving issues, and enhancing performance. The technology stack includes Laravel and Vue.js, and the final product will be deployed after completion.",
