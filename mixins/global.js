@@ -92,7 +92,8 @@ export default {
                     lists: [
                         "Jira",
                         "Trello",
-                        "Teamwork"
+                        "Teamwork",
+                        "Asana"
                     ],
                 },
                 {
