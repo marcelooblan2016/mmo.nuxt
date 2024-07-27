@@ -119,6 +119,7 @@ export default {
                     title: "Senior Full Stack Developer",
                     description: [
                         "Team member as a developer at documerge.ai primarily focuses on integration tasks, implementing new features, and bug fixing.",
+                        "Led the upgrade of large legacy applications from Nuxt 2 to Nuxt 3, enhancing performance, maintainability, and future-proofing the technology stack.",
                         "Skills: Laravel, Vue.js, Inertia.js, MySql, Tailwind, Git"
                     ]
                 },
