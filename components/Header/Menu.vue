@@ -5,7 +5,7 @@
 			<div class="container flex flex-wrap justify-between items-center mx-auto w-full">
 			    <NuxtLink v-bind:to="findMenuBySlug('about').value" class="flex items-center" draggable="false">
 				    <img src="/images/mmo.webp" class="mr-3 w-[100px] h-auto" alt="Marx Logo" draggable="false" />
-				    <span class="text-gray-400 font-bold" v-text="quote"></span>
+				    <span class="text-gray-400 font-bold hidden md:inline-block" v-text="quote"></span>
 			    </NuxtLink>
 				<template v-if="isOpen == false">
 					<button data-collapse-toggle="navbar-default" type="button" 
