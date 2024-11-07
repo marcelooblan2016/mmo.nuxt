@@ -85,6 +85,8 @@ export default {
                     lists: [
                         "Github Actions: CI/CD",
                         "Envoyer",
+                        "Larave Forge",
+                        "Netlify"
                     ],
                 },
                 {
