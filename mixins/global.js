@@ -23,7 +23,7 @@ export default {
             chartSrc: 'https://ghchart.rshah.org/marcelooblan2016',
             person: {
                 fullName: 'Marcelo Oblan III',
-                title: 'Fullstack Web Developer (Laravel | Vue.js | Inertia.js | LAMP | TALL)',
+                title: 'Senior Full-Stack Developer | SaaS, GenAI | Laravel & Vue | DevOps',
                 summary: 'I have been professionally engaged as a web developer since 2012, with a specialization in full-stack development. Over the years, I have cultivated extensive expertise by actively contributing to a diverse array of projects, encompassing various domains such as WiFi hotspots, online refund systems, eCommerce, and Software as a Service (SaaS) solutions. My portfolio is a testament to a rich and multifaceted experience, incorporating a blend of freelance and full-time project-based engagements.',
                 profileImg: '/images/profile-picture-ph.jpg',
             },
@@ -67,7 +67,7 @@ export default {
                     type: "Back-End",
                     lists: [
                         "PHP",
-                        "Laravel (elastic search, redis)",
+                        "Laravel",
                         "Livewire",
                         "Lumen",
                         "Code Igniter"
@@ -86,7 +86,12 @@ export default {
                         "Github Actions: CI/CD",
                         "Envoyer",
                         "Larave Forge",
-                        "Netlify"
+                        "Netlify",
+                        "Docker",
+                        "Zero Downtime Deployment",
+                        "Digital Ocean",
+                        "AWS (S3, EC2)",
+                        "Namecheap",
                     ],
                 },
                 {
@@ -108,7 +113,8 @@ export default {
                         "Command Line / SSH",
                         "SEO",
                         "Linux (Ubuntu, Centos, Amazon Linux)",
-                        "Hosting / Deployment: AWS, Digital Ocean, Namecheap, Hostinger"
+                        "Hosting / Deployment: AWS, Digital Ocean, Namecheap, Hostinger",
+                        "Docker Hub"
                     ],
                 }
             ],
@@ -120,6 +126,8 @@ export default {
                     time_frame: "Nov 2023 - Present",
                     title: "Senior Full Stack Developer",
                     description: [
+                        "Developed cross-platform mobile applications (iOS & Android) using NativePHP, enabling clients and vendors to seamlessly submit and track title search orders.",
+                        "Developed a Swift-based mobile widget app for the company, enabling real-time monitoring of key dashboard metrics.",
                         "Team member as a developer at documerge.ai primarily focuses on integration tasks, implementing new features, and bug fixing.",
                         "Led the upgrade of large legacy applications from Nuxt 2 to Nuxt 3, enhancing performance, maintainability, and future-proofing the technology stack.",
                         "Skills: Laravel, Vue.js, Inertia.js, Nuxt.js (echo, pusher), MySql, Tailwind, Git"
@@ -177,11 +185,40 @@ export default {
             portfolios: [
                 {
                     "shown": false,
+                    "title": "Fortbyte.io",
+                    "slug": "fortbyte-io",
+                    "description": "A lightweight SaaS platform for secure file sharing, allowing users to upload files and generate links that automatically expire and permanently delete after a set time. Designed for lawyers, HR teams, and small businesses, it provides a simple, confidential, and efficient alternative to traditional file-sharing tools.",
+                    "date_from": "10-01-2025",
+                    "date_to": "present",
+                    "status": "active",
+                    "url": "https://fortbyte.io/",
+                    "tech_used": [
+                        "Laravel",
+                        "Vue.js",
+                        "Tailwindcss",
+                        "Inertia.js",
+                        "Github Actions: CI / CD",
+                        "Docker",
+                        "Zero Downtime Deployment",
+                        "Open AI",
+                        "AWS S3",
+                        "Paddle",
+                        "Digital Ocean",
+                        "Namecheap"
+                    ],
+                    "photos": [
+                        {"url": "fortbyte.io/front.webp",  "front": true}
+                    ],
+                    "order": null,
+                    "is_display": true
+                },
+                {
+                    "shown": false,
                     "title": "Filechamp.io",
                     "slug": "filechamp-io",
                     "description": "An online file conversion and optimization tool that makes it easy to convert documents and images to various formats. You can resize images before converting them and process multiple files at once. The platform also allows you to download all your converted files together in a zip archive. With an intuitive interface and a focus on user privacy.",
                     "date_from": "09-01-2023",
-                    "date_to": "present",
+                    "date_to": "01-01-2025",
                     "status": "active",
                     "url": "https://filechamp.io/",
                     "tech_used": [
@@ -207,7 +244,7 @@ export default {
                     "date_from": "05-01-2023",
                     "date_to": "present",
                     "status": "active",
-                    "url": "https://paralanx.com",
+                    "url": null,
                     "tech_used": [
                         "Tailwindcss",
                         "Alpine.js",
