@@ -23,8 +23,8 @@ export default {
             chartSrc: 'https://ghchart.rshah.org/marcelooblan2016',
             person: {
                 fullName: 'Marcelo Oblan III',
-                title: 'Senior Full-Stack Developer | SaaS, GenAI | Laravel & Vue | DevOps',
-                summary: 'I have been professionally engaged as a web developer since 2012, with a specialization in full-stack development. Over the years, I have cultivated extensive expertise by actively contributing to a diverse array of projects, encompassing various domains such as WiFi hotspots, online refund systems, eCommerce, and Software as a Service (SaaS) solutions. My portfolio is a testament to a rich and multifaceted experience, incorporating a blend of freelance and full-time project-based engagements.',
+                title: 'Senior Full-Stack Developer | SaaS | PHP Laravel & Vue, Inertia.js | DevOps',
+                summary: 'Senior Full-Stack Web Developer with 12+ years of experience building, scaling, and maintaining production-grade web applications. Experienced across SaaS, eCommerce, and network-based systems, with a strong focus on modernizing large, long-running applications while ensuring stability, performance, and scalability.',
                 profileImg: '/images/profile-picture-ph.jpg',
             },
             loadingImg: '/images/checkered.webp',
