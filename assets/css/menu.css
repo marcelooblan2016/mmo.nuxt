@@ -34,6 +34,10 @@
     -moz-transition: all .2s ease-in-out;
     z-index: 20;
 }
+
+html.dark #navbar-container {
+    background: #1f2937;
+}
 #navbar-container::before {
     position: absolute;
     content: "";
