@@ -243,7 +243,7 @@ export default {
                     "description": "all-in-one website, featuring a diverse range of integrated tools such as paraphraser, grammar fixer, and summarizer, all powered by ChatGPT. Enhance your blogging experience with its custom-built CMS, optimized with GPT technology for seamless blog creation",
                     "date_from": "05-01-2023",
                     "date_to": "present",
-                    "status": "active",
+                    "status": "inactive",
                     "url": null,
                     "tech_used": [
                         "Tailwindcss",
@@ -316,8 +316,8 @@ export default {
                     "slug": "allcars",
                     "description": "A platform for purchasing and selling pre-owned vehicles in the online marketplace.",
                     "date_from": "08-05-2019",
-                    "date_to": "present",
-                    "status": "ongoing",
+                    "date_to": "2023",
+                    "status": "active",
                     "url": "https://cars.allcars.com/search/s",
                     "tech_used": [
                         "Laravel ^8",

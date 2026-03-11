@@ -51,6 +51,11 @@ html.dark #navbar-container {
     height: 100%;
     z-index: -1;
 }
+
+html.dark #navbar-container::before {
+    opacity: 0.03; /* dark/night mode */
+}
+
 #navbar-container.open {
     width: 300px;
     opacity: 1;
