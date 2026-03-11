@@ -1,5 +1,5 @@
 <template>
-    <div class="grid grid-cols-1 lg:grid-cols-5 gap-2 mt-5 p-5 min-h-[100px] bg-[rgba(255,255,255,0.6)] border border-2 border-gray-100] border-3 rounded-md shadow-[10px_10px_0px_0px_rgba(0,0,0,0.5)] text-center">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-2 mt-5 p-5 min-h-[100px] bg-[rgba(255,255,255,0.6)] dark:bg-[rgba(255,255,255,0.1)] dark:shadow-[10px_10px_0px_0px_rgba(255,255,255,0.5)] border border-2 border-gray-100] border-3 rounded-md shadow-[10px_10px_0px_0px_rgba(0,0,0,0.5)] text-center">
         <div class="col-span-1 lg:col-span-5 relative">
             <template v-for="(testimonial, index) in testimonials">
                 <Transition name="slide-fade">
@@ -15,8 +15,8 @@
                                     </blockquote>
                                     <figcaption class="py-2 flex items-center justify-center mt-2 space-x-3 border-t-2 border-gray-100">
                                         <div class="flex items-center divide-x-2 divide-gray-400 font-bold">
-                                            <div class="pr-3 text-gray-500" v-text="testimonial.name"></div>
-                                            <div class="pl-3 text-sm text-gray-400" v-text="testimonial.position"></div>
+                                            <div class="pr-3 text-gray-500 dark:text-gray-300" v-text="testimonial.name"></div>
+                                            <div class="pl-3 text-sm text-gray-400 dark:text-gray-300" v-text="testimonial.position"></div>
                                         </div>
                                     </figcaption>
                                 </figure>
@@ -30,7 +30,7 @@
                 <nav class="mx-auto">
                     <ul class="flex items-center -space-x-px h-8 text-sm">
                         <li>
-                            <a href="#" v-on:click.prevent="testimonailCurrent = testimonailCurrent > 0 ? testimonailCurrent - 1 : (testimonials.length - 1)" class="flex items-center justify-center px-3 h-8 ml-0 text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700">
+                            <a href="#" :draggable="false" v-on:click.prevent="testimonailCurrent = testimonailCurrent > 0 ? testimonailCurrent - 1 : (testimonials.length - 1)" class="flex items-center justify-center px-3 h-8 ml-0 text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700">
                                 <span class="sr-only">Previous</span>
                                 <svg class="w-2.5 h-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
@@ -40,6 +40,7 @@
                         <template v-for="(t, index) in testimonials">
                             <li>
                                 <a href="#"
+                                   :draggable="false"
                                     v-on:click.prevent="testimonailCurrent = index"
                                     class="flex items-center justify-center px-3 h-8 border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
                                     v-text="(index + 1)"
@@ -47,7 +48,7 @@
                             </li>
                         </template>
                         <li>
-                            <a href="#" v-on:click.prevent="testimonailCurrent = testimonailCurrent < (testimonials.length - 1) ? (testimonailCurrent + 1) : 0" class="flex items-center justify-center px-3 h-8 text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700">
+                            <a href="#" :draggable="false" v-on:click.prevent="testimonailCurrent = testimonailCurrent < (testimonials.length - 1) ? (testimonailCurrent + 1) : 0" class="flex items-center justify-center px-3 h-8 text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700">
                                 <span class="sr-only">Next</span>
                                  <svg class="w-2.5 h-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>

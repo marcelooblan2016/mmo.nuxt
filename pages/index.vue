@@ -10,7 +10,7 @@
             <div>
                 <!-- Name -->
                 <h1 class="text-4xl text-center mt-0 mb-0">
-                    <span class="title-font text-gray-500" v-text="person.fullName"></span>
+                    <span class="title-font text-gray-500 dark:text-gray-300" v-text="person.fullName"></span>
                     <span class="material-symbols-outlined">verified</span>
                     <div class="text-center text-sm md:text-xl text-gray-500">
                         <a class="block md:inline-block" v-bind:href="social.email.value" title="Email Me" v-html="`<span class='fa fa-envelope-o align-middle'></span>&nbsp;${social.email.text}`"></a>
@@ -19,15 +19,15 @@
                     </div>
                 </h1>
                 <hr class="my-2 h-px border-dashed border-2 border-slate-300" />
-                <div class="p-5 min-h-[100px] bg-[rgba(255,255,255,0.6)] border border-2 border-gray-100] border-3 rounded-md shadow-[10px_10px_0px_0px_rgba(0,0,0,0.5)] text-center">
+                <div class="p-5 min-h-[100px] bg-[rgba(255,255,255,0.6)] dark:bg-[rgba(255,255,255,0.1)] border border-2 border-gray-100] border-3 rounded-md shadow-[10px_10px_0px_0px_rgba(0,0,0,0.5)] dark:shadow-[10px_10px_0px_0px_rgba(255,255,255,0.5)] text-center">
                     <!-- Title-->
                     <h2 class="text-2xl text-center font-normal mt-0 mb-2" v-text="person.title"></h2>
                     <!-- Summary -->
                     <p v-text="person.summary" class="p-5 text-center"></p>
                     <p>
-                        <span class="text-gray-500">Github Contributions</span>
+                        <span class="text-gray-500 dark:text-gray-400">Github Contributions</span>
                         &bullet;
-                        <a target="_blank" v-bind:href="social.github.value" class="text-gray-600 text-sm font-bold underline inline-block">See Reference</a>
+                        <a target="_blank" v-bind:href="social.github.value" class="text-gray-600 dark:text-gray-400 text-sm font-bold underline inline-block">See Reference</a>
                     </p>
                     <hr class="my-2"/>
                     <v-lazy-image 
@@ -62,7 +62,7 @@
                 <!-- End Testimonials -->
                 <!-- Portfolio -->
                 <h1 class="text-4xl text-center font-normal leading-normal mb-2 mt-[2rem] md:mt-[2rem]">
-                    <span class="title-font text-gray-500">Latest Works</span>
+                    <span class="title-font text-gray-500 dark:text-gray-300">Latest Works</span>
                     <span class="fa fa-star-o align-middle mx-3"></span>
                 </h1>
                 <hr class="my-2 h-px border-dashed border-2 border-slate-300" />

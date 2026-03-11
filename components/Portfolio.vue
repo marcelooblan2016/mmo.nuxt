@@ -1,7 +1,7 @@
 <template>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 		<template v-for="portfolio in portofolioItems">
-			<div class="p-5 min-h-[100px] bg-[rgba(255,255,255,0.6)] border border-2 border-gray-100] border-3 rounded-md shadow-[10px_10px_0px_0px_rgba(0,0,0,0.5)] text-center">
+			<div class="p-5 min-h-[100px] bg-[rgba(255,255,255,0.6)] dark:bg-[rgba(255,255,255,0.1)] dark:shadow-[10px_10px_0px_0px_rgba(255,255,255,0.5)] border border-2 border-gray-100] border-3 rounded-md shadow-[10px_10px_0px_0px_rgba(0,0,0,0.5)] text-center">
 				<!-- COLUMN START -->
 				<div class="p-6 w-full bg-[rgba(255,255,255,0)] rounded-lg my-1">
 					<div>
@@ -13,7 +13,7 @@
 						</div>
 						<h2 class="text-2xl text-center font-normal leading-normal mt-0" v-text="portfolio.title"></h2>
 						<hr class="w-[20%] border-gray-300 mx-auto mb-1"/>
-					    <div v-show="portfolio.url != null" class="text-md text-gray-500">
+					    <div v-show="portfolio.url != null" class="text-md text-gray-500 dark:text-gray-300">
 							<a v-bind:href="portfolio['url']" target="_blank" class="break-all" v-html="`<span class='fa fa-link align-middle'></span>&nbsp;${portfolio.url}`"></a>
 						</div>
 						<p class="mb-3 text-sm font-normal text-center" v-html="`<span class='fa fa-hourglass-start'></span>&nbsp;${getPortfolioDateFromAndTo(portfolio)}`" v-show="getPortfolioDateFromAndTo(portfolio) != null"></p>
