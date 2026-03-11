@@ -76,20 +76,15 @@ export default {
     mixins: [global],
     setup () {
         const colorMode = useColorMode();
+        const defaultTheme: string = 'system';
+        let preference: any = defaultTheme;
         // Use saved preference if present, otherwise default to 'dark'
         if (typeof window !== 'undefined') {
-            const saved = localStorage.getItem('nuxt-color-mode');
-            if (localStorage.getItem('nuxt-color-mode-set') === null) {
-                localStorage.setItem('nuxt-color-mode-set', '1');
-                colorMode.preference = 'dark';
-            }
-            else {
-                colorMode.preference = saved;
-            }
-
-        } else {
-            colorMode.preference = 'dark';
+            const saved: any = localStorage.getItem('nuxt-color-mode');
+            preference = saved;
         }
+        colorMode.preference = preference;
+
         return { colorMode };
     },
     data () {
