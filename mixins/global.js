@@ -54,7 +54,6 @@ export default {
                         "Vue.js / Vuex",
                         "Inertia.js",
                         "Nuxt.js",
-                        "Node.js",
                         "TypeScript",
                         "Alpine.js",
                         "CSS / SCSS",
@@ -66,11 +65,8 @@ export default {
                 {
                     type: "Back-End",
                     lists: [
-                        "PHP",
-                        "Laravel",
-                        "Livewire",
-                        "Lumen",
-                        "Code Igniter"
+                        "PHP (Core PHP, Laravel, Lumen, Livewire, CodeIgniter)",
+                        "Node.js"
                     ],
                 },
                 {
