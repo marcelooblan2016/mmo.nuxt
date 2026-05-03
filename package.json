@@ -11,10 +11,10 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "@nuxtjs/tailwindcss": "^6.8.1",
-    "nuxt": "^3.8.0",
-    "vue": "^3.3.6",
-    "vue-router": "^4.2.5"
+    "@nuxtjs/tailwindcss": "^6.11.0",
+    "nuxt": "^4.0.0",
+    "vue": "^3.4.0",
+    "vue-router": "^4.3.0"
   },
   "dependencies": {
     "@nuxtjs/color-mode": "^4.0.0",

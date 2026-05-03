@@ -71,7 +71,7 @@
   </header>
 </template>
 <script lang="ts">
-import global from '~/mixins/global.js';
+import global from '@utils/global.js';
 export default {
     mixins: [global],
     setup () {
