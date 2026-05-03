@@ -5,7 +5,8 @@ export default {
             menu: [
                 {text: 'About Me', value: '/', slug: 'about'},
                 {text: 'Portfolio', value: 'portfolio', slug: 'portfolio'},
-                {text: 'Work Experience ', value: 'work-experience', slug: 'work-experience'},
+                {text: 'Work Experience', value: 'work-experience', slug: 'work-experience'},
+                {text: 'Services', value: 'services', slug: 'services'},
                 {text: 'Skills', value: 'skills', slug: 'skills'},
             ],
             footer: {
@@ -855,6 +856,38 @@ export default {
                     ],
                     "order": null,
                     "is_display": true
+                }
+            ],
+            services: [
+                {
+                    title: 'Web Development',
+                    description: 'Scalable software solutions engineered to streamline operations and support growth. From initial concept to enterprise-ready production deployment.',
+                    icon: 'fa fa-code',
+                    color: 'blue'
+                },
+                {
+                    title: 'System Modernization & Legacy Refactoring',
+                    description: 'Breathe new life into outdated applications. Reduce technical debt, lower long-term maintenance costs, and harden your digital infrastructure against security risks.',
+                    icon: 'fa fa-cogs',
+                    color: 'green'
+                },
+                {
+                    title: 'API Development & System Integration',
+                    description: 'Eliminate data silos. I connect your disparate platforms, allowing existing tools to communicate seamlessly, automate manual workflows, and provide a single source of truth.',
+                    icon: 'fa fa-plug',
+                    color: 'purple'
+                },
+                {
+                    title: 'AI-Powered Data Automation',
+                    description: 'Reclaim your team\'s time by automating repetitive, manual data tasks. I build intelligent agents that extract, clean, and structure data from complex or legacy sources, turning "dark data" into actionable insights.',
+                    icon: 'fa fa-code-fork',
+                    color: 'orange'
+                },
+                {
+                    title: 'Mobile & Cross-Platform Development',
+                    description: 'Meet your users where they are. Whether you need a responsive web portal or a dedicated mobile app for field staff and citizens, I build high-performance mobile-first interfaces that drive engagement and streamline remote operations.',
+                    icon: 'fa fa-mobile',
+                    color: 'red'
                 }
             ]
         };
