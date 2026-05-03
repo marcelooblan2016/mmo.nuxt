@@ -1,0 +1,45 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+html, body, * {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: rgba(255, 255, 255, 0.5);
+    color: #111827;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark body {
+    background: rgba(17, 24, 39, 0.95);
+    color: #f9fafb;
+}
+
+body::before {
+    top: 0;
+    left: 0;
+    position: fixed;
+    content: "";
+    display: block;
+    background-image: url('/images/philippines.svg');
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: .08;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+html.dark body::before {
+    opacity: 0.9; /* dark/night mode */
+}
+
+.v-lazy-image {
+  filter: blur(5px);
+  transition: filter 1.6s;
+  will-change: filter;
+}
+.v-lazy-image-loaded {
+  filter: blur(0);
+}
