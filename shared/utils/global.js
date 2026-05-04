@@ -25,7 +25,7 @@ export default {
             chartSrc: 'https://ghchart.rshah.org/marcelooblan2016',
             person: {
                 fullName: 'Marcelo Oblan III',
-                title: 'Senior Full-Stack Developer | SaaS | PHP Laravel & Vue | DevOps',
+                title: 'Senior Full-Stack Developer | SaaS | PHP Laravel & Vue | DevOps ',
                 summary: 'Senior Full-Stack Web Developer with 12+ years of experience building, scaling, and maintaining production-grade web applications. Experienced across SaaS, eCommerce, and network-based systems, with a strong focus on modernizing large, long-running applications while ensuring stability, performance, and scalability.',
                 profileImg: '/images/profile-picture-ph.jpg',
             },

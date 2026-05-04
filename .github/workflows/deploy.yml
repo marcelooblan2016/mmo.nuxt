@@ -19,6 +19,8 @@ jobs:
           filters: |
             frontend:
               - 'app/**'
+              - 'public/**'
+              - 'shared/**'
             api:
               - 'server/**'
 
