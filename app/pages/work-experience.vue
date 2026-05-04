@@ -6,7 +6,9 @@
                     <!-- Name -->
                     <h1 class="text-4xl text-center font-normal leading-normal mb-2 mt-[3rem] md:mt-[3rem]">
                         <span class="title-font text-gray-500 dark:text-gray-300">Work Experience</span>
-                        <span class="fa fa-list-alt align-middle mx-3"></span>
+                        <span class="text-yellow-500">
+                            <el-icon class="align-middle mx-3"><Histogram /></el-icon>
+                        </span>
                     </h1>
 					<hr class="my-2 h-px border-dashed border-2 border-slate-300" />
                     <div class="grid md:grid-cols-1 gap-3 text-gray-700">

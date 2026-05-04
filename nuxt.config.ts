@@ -1,8 +1,17 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
   srcDir: './app',
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/color-mode',
+    '@element-plus/nuxt'
+  ],
+  runtimeConfig: {
+    recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY,
+    public: {
+      recaptchaSiteKey: process.env.NUXT_PUBLIC_RECAPTCHA_SITE_KEY
+    }
+  },
   colorMode: {
     classSuffix: '',
     preference: 'system',
