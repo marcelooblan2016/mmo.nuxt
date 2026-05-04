@@ -4,11 +4,11 @@ export default {
             quote: 'Keep Moving Forward!',
             menu: [
                 {text: 'About Me', value: '/', slug: 'about'},
-                {text: 'Portfolio', value: 'portfolio', slug: 'portfolio'},
-                {text: 'Work Experience', value: 'work-experience', slug: 'work-experience'},
-                {text: 'Services', value: 'services', slug: 'services'},
-                {text: 'Skills', value: 'skills', slug: 'skills'},
-                // {text: 'Contact', value: 'contact', slug: 'contact'},
+                {text: 'Portfolio', value: '/portfolio', slug: 'portfolio'},
+                {text: 'Work Experience', value: '/work-experience', slug: 'work-experience'},
+                {text: 'Services', value: '/services', slug: 'services'},
+                {text: 'Skills', value: '/skills', slug: 'skills'},
+                // {text: 'Contact', value: '/contact', slug: 'contact'},
             ],
             footer: {
                 social: [
