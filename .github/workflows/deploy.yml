@@ -3,13 +3,33 @@ name: Deploy Production
 on:
   push:
     branches: [main]
+
 jobs:
-  deploy:
-    name: Deploy Production
+  # 1. First, we detect which files changed
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      frontend: ${{ steps.filter.outputs.frontend }}
+      api: ${{ steps.filter.outputs.api }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            frontend:
+              - 'app/**'
+            api:
+              - 'server/**'
+
+  # 2. Deploy Frontend only if /app changed
+  deploy-frontend:
+    needs: changes
+    if: ${{ needs.changes.outputs.frontend == 'true' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Deploy to Production
+      - uses: actions/checkout@v4
+      - name: Deploy Frontend
         uses: appleboy/ssh-action@master
         with:
           username: ${{ secrets.SSH_USERNAME }}
@@ -19,4 +39,25 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd /var/www/moblan.dev
-            . deploy.sh
+            # Pass an argument to your script to only deploy frontend
+            ./deploy.sh --frontend
+
+  # 3. Deploy API only if /server changed
+  deploy-api:
+    needs: changes
+    if: ${{ needs.changes.outputs.api == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy API
+        uses: appleboy/ssh-action@master
+        with:
+          username: ${{ secrets.SSH_USERNAME }}
+          host: ${{ secrets.SSH_HOST }}
+          key: ${{ secrets.SSH_KEY }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd /var/www/moblan.dev
+            # Pass an argument to your script to only deploy api
+            ./deploy.sh --api
