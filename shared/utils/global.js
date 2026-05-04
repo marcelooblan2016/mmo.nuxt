@@ -8,6 +8,7 @@ export default {
                 {text: 'Work Experience', value: 'work-experience', slug: 'work-experience'},
                 {text: 'Services', value: 'services', slug: 'services'},
                 {text: 'Skills', value: 'skills', slug: 'skills'},
+                {text: 'Contact', value: 'contact', slug: 'contact'},
             ],
             footer: {
                 social: [
@@ -866,13 +867,13 @@ export default {
                     color: 'blue'
                 },
                 {
-                    title: 'System Modernization & Legacy Refactoring',
+                    title: 'Modernization & Legacy Refactoring',
                     description: 'Breathe new life into outdated applications. Reduce technical debt, lower long-term maintenance costs, and harden your digital infrastructure against security risks.',
                     icon: 'fa fa-cogs',
                     color: 'green'
                 },
                 {
-                    title: 'API Development & System Integration',
+                    title: 'API Development & Integration',
                     description: 'Eliminate data silos. I connect your disparate platforms, allowing existing tools to communicate seamlessly, automate manual workflows, and provide a single source of truth.',
                     icon: 'fa fa-plug',
                     color: 'purple'

@@ -6,7 +6,10 @@
                     <!-- Name -->
                     <h1 class="text-4xl text-center font-normal leading-normal mb-2 mt-[3rem] md:mt-[3rem]">
                         <span class="title-font text-gray-500 text-gray-300">Portfolio</span>
-                        <span class="fa fa-star-o align-middle mx-3"></span>
+                        <span class="text-yellow-500">
+                            <el-icon class="align-middle mx-3"><Finished /></el-icon>
+                        </span>
+
                     </h1>
 					<hr class="my-2 h-px border-dashed border-2 border-slate-300" />
 					<!-- Portfolio -->

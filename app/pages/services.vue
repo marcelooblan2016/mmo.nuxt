@@ -6,7 +6,9 @@
                     <!-- Name -->
                     <h1 class="text-4xl text-center font-normal leading-normal mb-2 mt-[3rem] md:mt-[3rem]">
                         <span class="title-font text-gray-500 dark:text-gray-300">Services</span>
-                        <i class="fa fa-database align-middle mx-2"></i>
+                        <span class="text-yellow-500">
+                            <el-icon class="align-middle mx-2"><Service /></el-icon>
+                        </span>
                     </h1>
                     <hr class="my-2 h-px border-dashed border-2 border-slate-300" />
                     <div class="grid md:grid-cols-2 gap-3 text-gray-700 dark:text-gray-300">
@@ -15,7 +17,7 @@
                                 <div class="px-3 md:px-[2em]">
                                     <!-- Skill Type-->
                                     <h2 class="text-lg font-bold text-left mt-0 mb-2">
-                                        <span :class="[service.icon, `text-red-500`, 'mr-1', 'align-middle', 'text-3xl']"></span>
+                                        <span :class="[service.icon, `text-gray-400`, 'mr-1', 'align-middle', 'text-3xl']"></span>
 
                                         <span>{{ service.title }}</span>
                                     </h2>
