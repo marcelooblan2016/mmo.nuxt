@@ -8,7 +8,7 @@ export default {
                 {text: 'Work Experience', value: '/work-experience', slug: 'work-experience'},
                 {text: 'Services', value: '/services', slug: 'services'},
                 {text: 'Skills', value: '/skills', slug: 'skills'},
-                // {text: 'Contact', value: '/contact', slug: 'contact'},
+                {text: 'Contact', value: '/contact', slug: 'contact'},
             ],
             footer: {
                 social: [
