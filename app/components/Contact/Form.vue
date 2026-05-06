@@ -1,19 +1,39 @@
 <template>
-    <div class="mt-[3em]">
+    <div>
         <div class="mb-[2em] w-full">
             <div class="flex sm:h-auto">
                 <div class="m-auto w-full max-w-lg">
                     <el-form label-position="top" :model="form" :rules="rules" ref="formRef" label-width="100px" @submit.prevent="submitForm">
-                        <el-form-item label="Name" prop="name">
+                        <el-form-item prop="name">
+                            <template #label>
+                                <span class="text-md text-gray-500 dark:text-gray-300">
+                                    Name
+                                </span>
+                            </template>
                             <el-input size="large" v-model="form.name" placeholder="Your name" clearable></el-input>
                         </el-form-item>
-                        <el-form-item label="Email" prop="email">
+                        <el-form-item prop="email">
+                            <template #label>
+                                <span class="text-md text-gray-500 dark:text-gray-300">
+                                    Email
+                                </span>
+                            </template>
                             <el-input size="large" v-model="form.email" placeholder="your@email.com" clearable></el-input>
                         </el-form-item>
-                        <el-form-item label="Subject" prop="subject">
+                        <el-form-item prop="subject">
+                            <template #label>
+                                <span class="text-md text-gray-500 dark:text-gray-300">
+                                    Subject
+                                </span>
+                            </template>
                             <el-input size="large" v-model="form.subject" placeholder="What is this about?" clearable></el-input>
                         </el-form-item>
-                        <el-form-item label="Message" prop="message">
+                        <el-form-item prop="message">
+                            <template #label>
+                                <span class="text-md text-gray-500 dark:text-gray-300">
+                                    Message
+                                </span>
+                            </template>
                             <el-input
                                 size="large"
                                 type="textarea"
@@ -73,6 +93,7 @@ const formRef = ref()
 const loading = ref(false)
 const successMessage = ref('')
 const errorMessage = ref('')
+const apiUrl = ref(runtimeConfig.public.apiUrl || '')
 const reCaptchaSiteKey = ref(runtimeConfig.public.recaptchaSiteKey || '')
 
 onMounted(() => {
@@ -108,7 +129,6 @@ const submitForm = () => {
         loading.value = true
         successMessage.value = ''
         errorMessage.value = ''
-
         try {
             // Wait for grecaptcha to be ready
             await waitForGrecaptcha()
@@ -120,7 +140,7 @@ const submitForm = () => {
                 throw new Error('Failed to get reCAPTCHA token')
             }
 
-            const response = await $fetch('/api/contact', {
+            const response = await $fetch(`${apiUrl.value}/api/contact`, {
                 method: 'POST',
                 body: {
                     ...form.value,

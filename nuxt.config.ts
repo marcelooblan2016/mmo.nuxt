@@ -9,6 +9,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY,
     public: {
+      apiUrl: process.env.NUXT_PUBLIC_API_URL,
       recaptchaSiteKey: process.env.NUXT_PUBLIC_RECAPTCHA_SITE_KEY
     }
   },
