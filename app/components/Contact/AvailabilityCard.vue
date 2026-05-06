@@ -37,7 +37,7 @@
                     </div>
                     <div class="item-header-content">
                         <div class="item-label">Pacific (PDT)</div>
-                        <div class="item-badge">UTC-7</div>
+                        <div class="item-badge">UTC-7 </div>
                     </div>
                 </div>
                 <div class="item-value">
@@ -53,7 +53,7 @@
                     </div>
                     <div class="item-header-content">
                         <div class="item-label">Philippines (PHT)</div>
-                        <div class="item-badge">UTC+8</div>
+                        <div class="item-badge">UTC+8 </div>
                     </div>
                 </div>
                 <div class="item-value">
