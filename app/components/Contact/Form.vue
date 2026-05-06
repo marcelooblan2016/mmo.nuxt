@@ -129,8 +129,6 @@ const submitForm = () => {
         loading.value = true
         successMessage.value = ''
         errorMessage.value = ''
-        alert(apiUrl.value)
-        return false;
         try {
             // Wait for grecaptcha to be ready
             await waitForGrecaptcha()
@@ -142,7 +140,7 @@ const submitForm = () => {
                 throw new Error('Failed to get reCAPTCHA token')
             }
 
-            const response = await $fetch('/api/contact', {
+            const response = await $fetch(`${apiUrl.value}/api/contact`, {
                 method: 'POST',
                 body: {
                     ...form.value,

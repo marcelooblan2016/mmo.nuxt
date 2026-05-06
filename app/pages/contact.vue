@@ -12,12 +12,12 @@
                         <p class="text-base text-gray-500">Use the form below to send us an email</p>
                     </h1>
                     <hr class="my-2 h-px border-dashed border-2 border-slate-300" />
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-[2em]">
-                        <div>
-                            <Contact.AvailabilityCard variant="gradient-light-custom" />
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="mt-[2em]">
+                            <Contact.Form />
                         </div>
                         <div>
-                            <ContactForm />
+                            <Contact.AvailabilityCard variant="gradient-light-custom" />
                         </div>
                     </div>
 

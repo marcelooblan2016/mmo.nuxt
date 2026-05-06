@@ -29,25 +29,6 @@
                 </div>
             </div>
 
-            <!-- PH Timezone -->
-            <!-- Disabled
-            <div class="availability-item">
-                <div class="item-header">
-                    <div class="item-icon-wrapper ph">
-                        <el-icon><LocationFilled /></el-icon>
-                    </div>
-                    <div class="item-header-content">
-                        <div class="item-label">Philippines (PHT)</div>
-                        <div class="item-badge">UTC+8</div>
-                    </div>
-                </div>
-                <div class="item-value">
-                    <span class="time-range">4:00 AM - 2:00 PM</span>
-                    <span class="timezone-indicator">🌅 Morning to Afternoon</span>
-                </div>
-            </div>
-            -->
-
             <!-- PDT Timezone -->
             <div class="availability-item">
                 <div class="item-header">
@@ -64,6 +45,23 @@
                     <span class="timezone-indicator">🌆 Afternoon to Night</span>
                 </div>
             </div>
+            <!-- PH Timezone -->
+            <div class="availability-item">
+                <div class="item-header">
+                    <div class="item-icon-wrapper ph">
+                        <el-icon><LocationFilled /></el-icon>
+                    </div>
+                    <div class="item-header-content">
+                        <div class="item-label">Philippines (PHT)</div>
+                        <div class="item-badge">UTC+8</div>
+                    </div>
+                </div>
+                <div class="item-value">
+                    <span class="time-range">4:00 AM - 2:00 PM</span>
+                    <span class="timezone-indicator">🌅 Morning to Afternoon</span>
+                </div>
+            </div>
+
         </div>
 
         <template #footer>
