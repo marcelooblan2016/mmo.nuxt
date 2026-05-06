@@ -57,7 +57,7 @@ class ContactController extends Controller
                     $appName = config('app.name');
                     $mail->to(config('services.recaptcha.recipient_email'))
                         ->from(config('mail.from.address'), config('mail.from.name'))
-                        ->subject("New Contact Form Submission: {$emailData['subject']} {$appName}")
+                        ->subject("New Contact Form Submission - {$emailData['subject']} {$appName}")
                         ->replyTo($emailData['email']);
                 }
             );
