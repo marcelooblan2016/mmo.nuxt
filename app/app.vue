@@ -11,13 +11,13 @@ export default {
             meta: [
                 { name: 'description', content: 'Software engineer / Fullstack web developer (Laravel | Vuejs | LAMP)' },
                 /* Facebook */
-                { property:"og:url", content: 'https://marcelooblan2016.github.io/' },
+                { property:"og:url", content: 'https://moblan.dev/' },
                 { property:"og:type", content: 'website' },
                 { property:"og:title", content: 'About | Marcelo Oblan' },
                 { property:"og:description", content: 'Software engineer / Fullstack web developer (Laravel | Vuejs | LAMP)' },
-                { property:"og:image", content: 'http://marcelooblan2016.github.io/images/profile-seo.jpg' },
-                { property:"og:image:url", content: 'https://marcelooblan2016.github.io/images/profile-seo.jpg' },
-                { property:"og:image:secure_url", content: 'https://marcelooblan2016.github.io/images/profile-seo.jpg' },
+                { property:"og:image", content: 'https://moblan.dev/images/profile-seo.jpg' },
+                { property:"og:image:url", content: 'https://moblan.dev/images/profile-seo.jpg' },
+                { property:"og:image:secure_url", content: 'https://moblan.dev/images/profile-seo.jpg' },
                 { property:"og:site_name", content: 'About | Marcelo Oblan' },
                 /* Twitter */
                 { property:"twitter:title", content: 'Marcelo Oblan' },
