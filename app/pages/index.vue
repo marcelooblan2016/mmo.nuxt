@@ -5,6 +5,7 @@
                 <v-lazy-image draggable="false" class="w-[150px] h-[150px] rounded-full ring-[1px] ring-gray-400 shadow-md" 
                     v-bind:src="person.profileImg"
                     :src-placeholder="loadingImg"
+                    alt="Profile Picture"
                 />
             </div>
             <div>
@@ -34,6 +35,7 @@
                         class="w-full h-auto max-h-[250px]" 
                         :src="chartSrc" 
                         :src-placeholder="loadingImg"
+                        alt="Chart"
                     draggable="false"/>
                 </div>
                 <div class="text-center mt-[2em] md:mt-[3em] h-auto">
@@ -61,10 +63,10 @@
                 <Testimonials />
                 <!-- End Testimonials -->
                 <!-- Portfolio -->
-                <h1 class="text-4xl text-center font-normal leading-normal mb-2 mt-[2rem] md:mt-[2rem]">
+                <h2 class="text-4xl text-center font-normal leading-normal mb-2 mt-[2rem] md:mt-[2rem]">
                     <span class="title-font text-gray-500 dark:text-gray-300">Latest Works</span>
                     <span class="fa fa-star-o align-middle mx-3"></span>
-                </h1>
+                </h2>
                 <hr class="my-2 h-px border-dashed border-2 border-slate-300" />
                 <Portfolio :portofolioItems="portfolioItems" />
                 <div class="text-center mt-[2em] md:mt-[3em] h-auto">

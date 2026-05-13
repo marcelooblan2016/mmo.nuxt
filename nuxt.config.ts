@@ -1,4 +1,11 @@
 export default defineNuxtConfig({
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'en'
+      }
+    }
+  },
   devtools: { enabled: false },
   srcDir: './app',
   modules: [
