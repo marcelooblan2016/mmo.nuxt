@@ -1,34 +1,28 @@
 <template>
-    <div class="mt-[3em]">
-        <div class="mb-[2em] w-full">
-            <div class="flex sm:h-auto">
-                <div class="m-auto w-full">
-                    <!-- Name -->
-                    <h1 class="text-4xl text-center font-normal leading-normal mb-2 mt-[3rem] md:mt-[3rem]">
-                        <span class="title-font text-gray-500 text-gray-300">Let's Connect</span>
-                        <span class="text-yellow-500">
-                            <el-icon class="align-middle mx-3"><Message /></el-icon>
-                        </span>
-                        <p class="text-base text-gray-500">Use the form below to send us an email</p>
-                    </h1>
-                    <hr class="my-2 h-px border-dashed border-2 border-slate-300" />
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="mt-[2em]">
-                            <Contact.Form />
-                        </div>
-                        <div>
-                            <Contact.AvailabilityCard variant="gradient-light-custom" />
-                        </div>
-                    </div>
+    <div>
+        <PageIntro title="Let's Connect" crumb="Contact">
+            Use the form below to send me an email, or write directly to
+            <a :href="content.social.email.value" class="text-accent [overflow-wrap:anywhere] hover:underline">{{ content.social.email.text }}</a>.
+        </PageIntro>
 
-
-                </div>
-            </div>
+        <div class="grid items-start gap-5 md:grid-cols-[1fr_minmax(0,22rem)]">
+            <ContactForm />
+            <ContactAvailabilityCard />
         </div>
     </div>
 </template>
-<script setup>
-useHead({
-    title: 'Contact | Marcelo Oblan'
+<script setup lang="ts">
+import { content } from '@utils/content.js'
+
+usePageSeo({
+    title: 'Contact | Marcelo Oblan III',
+    description: 'Contact Marcelo Oblan III, Senior Full-Stack Engineer. Available Monday to Friday, 1:00 PM to 11:00 PM Pacific (4:00 AM to 2:00 PM Philippine time).',
+    path: '/contact',
+    crumb: 'Contact',
+    schema: [{
+        '@type': 'ContactPage',
+        url: 'https://moblan.dev/contact',
+        mainEntity: { '@id': personSchema['@id'] },
+    }],
 })
 </script>

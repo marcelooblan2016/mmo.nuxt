@@ -1,52 +1,37 @@
 <template>
-	<div class="mt-[3em]">
-        <div class="mb-[3em] md:mb-[10em] w-full">
-			<div class="flex sm:h-auto">
-                <div class="m-auto w-full">
-                    <!-- Name -->
-                    <h1 class="text-4xl text-center font-normal leading-normal mb-2 mt-[3rem] md:mt-[3rem]">
-                        <span class="title-font text-gray-500 dark:text-gray-300">Work Experience</span>
-                        <span class="text-yellow-500">
-                            <el-icon class="align-middle mx-3"><Histogram /></el-icon>
-                        </span>
-                    </h1>
-					<hr class="my-2 h-px border-dashed border-2 border-slate-300" />
-                    <div class="grid md:grid-cols-1 gap-3 text-gray-700">
-						<template v-for="experience in experiences">
-							<div class="p-5 min-h-[100px] bg-[rgba(255,255,255,0.6)] dark:bg-[rgba(255,255,255,0.1)] dark:shadow-[10px_10px_0px_0px_rgba(255,255,255,0.5)] border border-2 border-gray-100] border-3 rounded-md shadow-[10px_10px_0px_0px_rgba(0,0,0,0.5)] text-center mb-2">
-								<div class="px-3 md:px-[2em] pb-[1em] text-gray-500 dark:text-gray-300">
-									<!-- Experiece -->
-									<h2 class="text-2xl text-center lg:text-left mt-0 mb-2">
-									    <span class="text-2xl" v-text="experience.company"></span><br/>
-									    <span class="text-lg text-gray-500 dark:text-gray-300" v-text="experience.type"></span>
-										&nbsp;
-									    <span class="text-lg text-gray-500 dark:text-gray-300" v-text="experience.time_frame"></span>
-									</h2>
-                                    <hr class="mb-4" />
-									<p v-html="`<span class='fa fa-map-pin text-gray-500 dark:text-gray-300'></span>&nbsp;${experience.location}`" class="text-left text-lg text-gray-500 dark:text-gray-300"></p>
-									<!-- Experience Description -->
-									<template v-for="list in experience.description">
-										<p v-html="`<span class='fa fa-minus text-gray-500'></span>&nbsp;` + list" class="text-left" :class="{'text-amber-900 dark:text-amber-100': list.includes('Skills:')}"></p>
-									</template>
-								</div>
-							</div>
-						</template>
-                    </div>
-                </div>
-			</div>
-		</div>
-	</div>
-</template>
-<script lang="ts">
-import global from '@utils/global.js';
-export default {
-    mixins: [global],
-    setup () {
-        useHead({
-            title: 'Work Experience | Marcelo Oblan',
-        })
+    <div>
+        <PageIntro title="Work Experience" crumb="Work Experience">
+            3 US companies (remote) and 2 Philippine companies (office), from a four-person startup team to senior engineering.
+        </PageIntro>
 
-        return {};
-    },
-}
+        <ol class="border-t border-line">
+            <li v-for="experience in content.experiences" :key="experience.company" class="grid gap-3 border-b border-line py-8 md:grid-cols-[12rem_1fr] md:gap-8">
+                <div>
+                    <p class="label !text-ink">{{ experience.time_frame }}</p>
+                    <p class="label mt-1">{{ experience.type }}</p>
+                </div>
+                <div>
+                    <h2 class="text-3xl">{{ experience.title }}</h2>
+                    <p class="mt-2 font-medium text-accent">{{ experience.company }}</p>
+                    <p class="text-sm text-muted">{{ experience.location }}</p>
+                    <ul class="mt-4 max-w-3xl list-disc space-y-2 pl-5 marker:text-sun">
+                        <li v-for="line in experienceHighlights(experience)" :key="line">{{ line }}</li>
+                    </ul>
+                    <p class="mt-4 font-mono text-xs leading-relaxed text-muted">
+                        {{ experienceSkills(experience).join(' · ') }}
+                    </p>
+                </div>
+            </li>
+        </ol>
+    </div>
+</template>
+<script setup lang="ts">
+import { content, experienceHighlights, experienceSkills } from '@utils/content.js'
+
+usePageSeo({
+    title: 'Work Experience | Marcelo Oblan III, Senior Full-Stack Engineer',
+    description: 'Career history of Marcelo Oblan III: AFX Research, AllCars.com, DiegoDev Group, Yondu and International Payments Processing.',
+    path: '/work-experience',
+    crumb: 'Work Experience',
+})
 </script>

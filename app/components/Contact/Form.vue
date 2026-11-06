@@ -1,120 +1,111 @@
 <template>
-    <div>
-        <div class="mb-[2em] w-full">
-            <div class="flex sm:h-auto">
-                <div class="m-auto w-full max-w-lg">
-                    <el-form label-position="top" :model="form" :rules="rules" ref="formRef" label-width="100px" @submit.prevent="submitForm">
-                        <el-form-item prop="name">
-                            <template #label>
-                                <span class="text-md text-gray-500 dark:text-gray-300">
-                                    Name
-                                </span>
-                            </template>
-                            <el-input size="large" v-model="form.name" placeholder="Your name" clearable></el-input>
-                        </el-form-item>
-                        <el-form-item prop="email">
-                            <template #label>
-                                <span class="text-md text-gray-500 dark:text-gray-300">
-                                    Email
-                                </span>
-                            </template>
-                            <el-input size="large" v-model="form.email" placeholder="your@email.com" clearable></el-input>
-                        </el-form-item>
-                        <el-form-item prop="subject">
-                            <template #label>
-                                <span class="text-md text-gray-500 dark:text-gray-300">
-                                    Subject
-                                </span>
-                            </template>
-                            <el-input size="large" v-model="form.subject" placeholder="What is this about?" clearable></el-input>
-                        </el-form-item>
-                        <el-form-item prop="message">
-                            <template #label>
-                                <span class="text-md text-gray-500 dark:text-gray-300">
-                                    Message
-                                </span>
-                            </template>
-                            <el-input
-                                size="large"
-                                type="textarea"
-                                v-model="form.message"
-                                :rows="6"
-                                placeholder="Your message..."
-                            ></el-input>
-                        </el-form-item>
-
-                        <!-- Submit Button -->
-                        <el-form-item>
-                            <el-button size="large" type="primary" class="w-full" :loading="loading" native-type="submit">
-                                <el-icon size="large" class="align-middle mx-1"><Position /></el-icon>
-                                {{ loading ? 'Sending...' : 'Send Message' }}
-                            </el-button>
-                        </el-form-item>
-                    </el-form>
-
-                    <!-- Success Message -->
-                    <el-alert v-if="successMessage" type="success" :closable="true" show-icon @close="successMessage = ''">
-                        {{ successMessage }}
-                    </el-alert>
-
-                    <!-- Error Message -->
-                    <el-alert v-if="errorMessage" type="error" :closable="true" show-icon @close="errorMessage = ''">
-                        An error occurred while sending your message. Please try again later.
-                    </el-alert>
-                </div>
+    <form class="rounded-2xl border border-line bg-surface p-6" novalidate @submit.prevent="submitForm" @focusin.once="loadRecaptcha">
+        <div class="grid gap-5 sm:grid-cols-2">
+            <div v-for="field in FIELDS" :key="field.name" :class="{ 'sm:col-span-2': field.wide }">
+                <label :for="`contact-${field.name}`" class="mb-1.5 block text-sm font-medium">{{ field.label }}</label>
+                <component
+                    :is="field.rows ? 'textarea' : 'input'"
+                    :id="`contact-${field.name}`"
+                    :value="form[field.name]"
+                    :name="field.name"
+                    :type="field.rows ? undefined : field.type"
+                    :rows="field.rows"
+                    :autocomplete="field.autocomplete"
+                    :placeholder="field.placeholder"
+                    :aria-invalid="Boolean(errors[field.name])"
+                    :aria-describedby="errors[field.name] ? `contact-${field.name}-error` : undefined"
+                    required
+                    class="w-full rounded-lg border bg-canvas px-3 py-2.5 placeholder:text-muted/70 focus:outline-none focus:ring-2 focus:ring-accent"
+                    :class="errors[field.name] ? 'border-red-500' : 'border-line'"
+                    @input="form[field.name] = $event.target.value"
+                    @blur="validateField(field.name)"
+                />
+                <p v-if="errors[field.name]" :id="`contact-${field.name}-error`" class="mt-1 text-sm text-red-600 dark:text-red-400">
+                    {{ errors[field.name] }}
+                </p>
             </div>
         </div>
-    </div>
+
+        <button type="submit" :disabled="loading" class="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 font-medium text-on-accent transition-opacity hover:opacity-90 disabled:opacity-60">
+            <Send class="size-4" aria-hidden="true" />
+            {{ loading ? 'Sending...' : 'Send Message' }}
+        </button>
+
+        <div aria-live="polite">
+            <p v-if="successMessage" class="mt-4 rounded-lg bg-accent-soft px-4 py-3 text-sm">{{ successMessage }}</p>
+            <p v-if="errorMessage" class="mt-4 rounded-lg border border-red-500 px-4 py-3 text-sm text-red-600 dark:text-red-400">
+                An error occurred while sending your message. Please try again later.
+            </p>
+        </div>
+
+        <p class="mt-4 text-xs text-muted">
+            Protected by reCAPTCHA. Google's <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="underline">Privacy Policy</a>
+            and <a href="https://policies.google.com/terms" target="_blank" rel="noopener" class="underline">Terms of Service</a> apply.
+        </p>
+    </form>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { Send } from 'lucide-vue-next'
+
+type FieldName = 'name' | 'email' | 'subject' | 'message'
+
+const FIELDS: { name: FieldName, label: string, placeholder: string, type?: string, autocomplete?: string, rows?: number, wide?: boolean }[] = [
+    { name: 'name', label: 'Name', placeholder: 'Your name', type: 'text', autocomplete: 'name' },
+    { name: 'email', label: 'Email', placeholder: 'your@email.com', type: 'email', autocomplete: 'email' },
+    { name: 'subject', label: 'Subject', placeholder: 'What is this about?', type: 'text', wide: true },
+    { name: 'message', label: 'Message', placeholder: 'Your message...', rows: 6, wide: true },
+]
+
+const REQUIRED_MESSAGES: Record<FieldName, string> = {
+    name: 'Name is required',
+    email: 'Email is required',
+    subject: 'Subject is required',
+    message: 'Message is required',
+}
+
+const EMAIL_FORMAT = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const runtimeConfig = useRuntimeConfig()
 
-const form = ref({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-})
+const emptyForm = (): Record<FieldName, string> => ({ name: '', email: '', subject: '', message: '' })
 
-const rules = {
-    name: [{ required: true, message: 'Name is required', trigger: 'blur' }],
-    email: [
-        { required: true, message: 'Email is required', trigger: 'blur' },
-        { type: 'email', message: 'Invalid email format', trigger: ['blur'] }
-    ],
-    subject: [{ required: true, message: 'Subject is required', trigger: 'blur' }],
-    message: [{ required: true, message: 'Message is required', trigger: 'blur' }]
-}
-
-const formRef = ref()
+const form = ref(emptyForm())
+const errors = ref<Partial<Record<FieldName, string>>>({})
 const loading = ref(false)
 const successMessage = ref('')
 const errorMessage = ref('')
-const apiUrl = ref(runtimeConfig.public.apiUrl || '')
-const reCaptchaSiteKey = ref(runtimeConfig.public.recaptchaSiteKey || '')
+const apiUrl = runtimeConfig.public.apiUrl || ''
+const reCaptchaSiteKey = runtimeConfig.public.recaptchaSiteKey || ''
 
-onMounted(() => {
-    // Load reCAPTCHA v3 script
-    if (!window.grecaptcha) {
-        const script = document.createElement('script')
-        script.src = `https://www.google.com/recaptcha/api.js?render=${reCaptchaSiteKey.value}`
-        script.async = true
-        script.defer = true
-        document.body.appendChild(script)
-    }
-})
+function validateField (name: FieldName) {
+    const value = form.value[name].trim()
+    let error = ''
+    if (!value) error = REQUIRED_MESSAGES[name]
+    else if (name === 'email' && !EMAIL_FORMAT.test(value)) error = 'Invalid email format'
+    errors.value[name] = error
+    return !error
+}
+
+// Loaded on first interaction so reCAPTCHA doesn't slow down the initial page load.
+function loadRecaptcha () {
+    if ((window as any).grecaptcha || document.getElementById('recaptcha-script')) return
+    const script = document.createElement('script')
+    script.id = 'recaptcha-script'
+    script.src = `https://www.google.com/recaptcha/api.js?render=${reCaptchaSiteKey}`
+    script.async = true
+    script.defer = true
+    document.body.appendChild(script)
+}
 
 const waitForGrecaptcha = (): Promise<void> => {
     return new Promise((resolve) => {
-        if (window.grecaptcha) {
+        if ((window as any).grecaptcha) {
             resolve()
             return
         }
         const interval = setInterval(() => {
-            if (window.grecaptcha) {
+            if ((window as any).grecaptcha) {
                 clearInterval(interval)
                 resolve()
             }
@@ -122,57 +113,47 @@ const waitForGrecaptcha = (): Promise<void> => {
     })
 }
 
-const submitForm = () => {
-    formRef.value.validate(async (valid: boolean) => {
-        if (!valid) return
+async function submitForm () {
+    const results = FIELDS.map((field) => validateField(field.name))
+    if (results.includes(false)) return
 
-        loading.value = true
-        successMessage.value = ''
-        errorMessage.value = ''
-        try {
-            // Wait for grecaptcha to be ready
-            await waitForGrecaptcha()
+    loading.value = true
+    successMessage.value = ''
+    errorMessage.value = ''
+    try {
+        loadRecaptcha()
+        await waitForGrecaptcha()
 
-            // Execute reCAPTCHA v3
-            const captchaToken = await (window as any).grecaptcha.execute(reCaptchaSiteKey.value, { action: 'submit' })
+        const grecaptcha = (window as any).grecaptcha
+        await new Promise<void>((resolve) => grecaptcha.ready(resolve))
+        const captchaToken = await grecaptcha.execute(reCaptchaSiteKey, { action: 'submit' })
 
-            if (!captchaToken) {
-                throw new Error('Failed to get reCAPTCHA token')
-            }
-
-            const response = await $fetch(`${apiUrl.value}/api/contact`, {
-                method: 'POST',
-                body: {
-                    ...form.value,
-                    captchaToken
-                }
-            })
-
-            if (response.success) {
-                successMessage.value = response.message
-
-                // Reset form
-                form.value = {
-                    name: '',
-                    email: '',
-                    subject: '',
-                    message: ''
-                }
-
-                // Reset validation state
-                formRef.value.clearValidate()
-
-                // Clear success message after 5 seconds
-                setTimeout(() => {
-                    successMessage.value = ''
-                }, 5000)
-            }
-        } catch (error: any) {
-            errorMessage.value = error.data?.statusMessage || error.message || 'Failed to send message. Please try again.'
-            console.error('❌ Contact form error:', error)
-        } finally {
-            loading.value = false
+        if (!captchaToken) {
+            throw new Error('Failed to get reCAPTCHA token')
         }
-    })
+
+        const response = await $fetch<{ success: boolean, message: string }>(`${apiUrl}/api/contact`, {
+            method: 'POST',
+            body: {
+                ...form.value,
+                captchaToken,
+            },
+        })
+
+        if (response.success) {
+            successMessage.value = response.message
+            form.value = emptyForm()
+            errors.value = {}
+
+            setTimeout(() => {
+                successMessage.value = ''
+            }, 5000)
+        }
+    } catch (error: any) {
+        errorMessage.value = error.data?.statusMessage || error.message || 'Failed to send message. Please try again.'
+        console.error('Contact form error:', error)
+    } finally {
+        loading.value = false
+    }
 }
 </script>
