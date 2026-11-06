@@ -1,105 +1,182 @@
 <template>
-    <div class="flex sm:h-auto">
-        <div class="m-auto">
-            <div class="flex flex-col justify-center items-center px-2 py-2 mt-[5em] md:mt-[4em]">
-                <v-lazy-image draggable="false" class="w-[150px] h-[150px] rounded-full ring-[1px] ring-gray-400 shadow-md" 
-                    v-bind:src="person.profileImg"
-                    :src-placeholder="loadingImg"
-                    alt="Profile Picture"
-                />
-            </div>
+    <div>
+        <!-- Hero -->
+        <section class="grid items-center gap-10 pb-12 pt-12 md:grid-cols-[1fr_auto] md:pt-20">
             <div>
-                <!-- Name -->
-                <h1 class="text-4xl text-center mt-0 mb-0">
-                    <span class="title-font text-gray-500 dark:text-gray-300" v-text="person.fullName"></span>
-                    <span class="material-symbols-outlined">verified</span>
-                    <div class="text-center text-sm md:text-xl text-gray-500">
-                        <a class="block md:inline-block" v-bind:href="social.email.value" title="Email Me" v-html="`<span class='fa fa-envelope-o align-middle'></span>&nbsp;${social.email.text}`"></a>
-                        &nbsp;
-                        <a class="block md:inline-block" target="_blank" v-bind:href="social.github.value" title="See Github" v-html="`<span class='fa fa fa-github align-middle'></span>&nbsp;${social.github.text}`"></a>
-                    </div>
+                <p class="label flex items-center gap-2">
+                    <span class="size-2 rounded-full bg-sun" aria-hidden="true"></span>
+                    Remote · Pacific time
+                </p>
+                <h1 class="mt-5 text-[clamp(3.25rem,10vw,7.5rem)] !leading-[0.92] !tracking-[-0.04em]">
+                    {{ person.fullName }}
                 </h1>
-                <hr class="my-2 h-px border-dashed border-2 border-slate-300" />
-                <div class="p-5 min-h-[100px] bg-[rgba(255,255,255,0.6)] dark:bg-[rgba(255,255,255,0.1)] border border-2 border-gray-100] border-3 rounded-md shadow-[10px_10px_0px_0px_rgba(0,0,0,0.5)] dark:shadow-[10px_10px_0px_0px_rgba(255,255,255,0.5)] text-center">
-                    <!-- Title-->
-                    <h2 class="text-2xl text-center font-normal mt-0 mb-2" v-text="person.title"></h2>
-                    <!-- Summary -->
-                    <p v-text="person.summary" class="p-5 text-center"></p>
-                    <p>
-                        <span class="text-gray-500 dark:text-gray-400">Github Contributions</span>
-                        &bullet;
-                        <a target="_blank" v-bind:href="social.github.value" class="text-gray-600 dark:text-gray-400 text-sm font-bold underline inline-block">See Reference</a>
-                    </p>
-                    <hr class="my-2"/>
-                    <v-lazy-image 
-                        class="w-full h-auto max-h-[250px]" 
-                        :src="chartSrc" 
-                        :src-placeholder="loadingImg"
-                        alt="Chart"
-                    draggable="false"/>
-                </div>
-                <div class="text-center mt-[2em] md:mt-[3em] h-auto">
-                    <NuxtLink v-bind:to="findMenuBySlug('portfolio').value" class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 border-b-4 border-gray-400 hover:border-gray-500 rounded block md:inline-block mx-1">
-                        See Portfolio
-                        <span class="fa fa-star-o align-middle"></span>
-                    </NuxtLink>
-
-                    <NuxtLink v-bind:to="findMenuBySlug('work-experience').value" class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 border-b-4 border-gray-400 hover:border-gray-500 rounded block md:inline-block mx-1">
-                        See Work Experience
-                        <span class="fa fa-list-alt align-middle"></span>
-                    </NuxtLink>
-
-                    <NuxtLink v-bind:to="findMenuBySlug('skills').value" class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 border-b-4 border-gray-400 hover:border-gray-500 rounded block md:inline-block mx-1">
-                        See Skills
-                        <span class="fa fa-magic align-middle"></span>
-                    </NuxtLink>
-
-                    <a target="_blank" v-bind:href="externalLinks.resume" class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 border-b-4 border-gray-400 hover:border-gray-500 rounded block md:inline-block mx-1">
-                        Download Resume
-                        <i class="fa fa-download align-middle"></i>
-                    </a>
-                </div>
-                <!-- Testimonials -->
-                <Testimonials />
-                <!-- End Testimonials -->
-                <!-- Portfolio -->
-                <h2 class="text-4xl text-center font-normal leading-normal mb-2 mt-[2rem] md:mt-[2rem]">
-                    <span class="title-font text-gray-500 dark:text-gray-300">Latest Works</span>
-                    <span class="fa fa-star-o align-middle mx-3"></span>
-                </h2>
-                <hr class="my-2 h-px border-dashed border-2 border-slate-300" />
-                <Portfolio :portofolioItems="portfolioItems" />
-                <div class="text-center mt-[2em] md:mt-[3em] h-auto">
-                    <NuxtLink v-bind:to="findMenuBySlug('portfolio').value" class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 border-b-4 border-gray-400 hover:border-gray-500 rounded block md:inline-block mx-1 min-w-[200px]">
-                        See More
-                    </NuxtLink>
-                </div>
-                <!-- End Portfolio -->
+                <p class="mt-6 max-w-2xl font-display text-2xl leading-snug tracking-tight md:text-3xl">
+                    Senior Full-Stack Engineer building <span class="text-accent">SaaS</span>,
+                    <span class="text-accent">AI integrations</span> and
+                    <span class="text-accent">automation</span>.
+                </p>
             </div>
-        </div>
+            <figure class="relative mx-auto w-40 md:w-52">
+                <img
+                    :src="person.profileImg"
+                    :alt="`Portrait of ${person.fullName}`"
+                    width="800"
+                    height="800"
+                    fetchpriority="high"
+                    class="aspect-square w-full rounded-3xl object-cover"
+                >
+                <figcaption class="absolute -bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-1 whitespace-nowrap rounded-full bg-ink px-3 py-1.5 text-xs font-medium text-canvas">
+                    {{ content.quote }}
+                    <ArrowUpRight class="size-3.5 text-sun" aria-hidden="true" />
+                </figcaption>
+            </figure>
+        </section>
+
+        <section class="border-t border-line pt-8">
+            <p class="max-w-3xl text-lg">{{ person.summary }}</p>
+            <div class="mt-6 flex flex-wrap items-center gap-3">
+                <NuxtLink to="/portfolio" class="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 font-medium text-on-accent transition-opacity hover:opacity-90">
+                    See Portfolio
+                    <ArrowRight class="size-4" aria-hidden="true" />
+                </NuxtLink>
+                <a :href="content.externalLinks.resume" download="Marcelo-Oblan-III-Resume.pdf" class="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-5 py-3 font-medium transition-colors hover:border-ink">
+                    <Download class="size-4" aria-hidden="true" />
+                    Download Resume
+                </a>
+            </div>
+            <ul class="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-[0.95rem]">
+                <li>
+                    <a :href="social.email.value" class="flex items-center gap-2 [overflow-wrap:anywhere] hover:text-accent">
+                        <Mail class="size-4 shrink-0 text-muted" aria-hidden="true" />
+                        {{ social.email.text }}
+                    </a>
+                </li>
+                <li>
+                    <a :href="social.github.value" target="_blank" rel="me noopener" class="flex items-center gap-2 [overflow-wrap:anywhere] hover:text-accent">
+                        <Github class="size-4 shrink-0 text-muted" aria-hidden="true" />
+                        {{ social.github.text }}
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Quick facts -->
+        <section aria-label="Quick facts" class="mt-14">
+            <dl class="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-4">
+                <div v-for="fact in facts" :key="fact.label" class="bg-surface p-5">
+                    <dt class="label">{{ fact.label }}</dt>
+                    <dd class="mt-2 font-display text-3xl font-semibold tracking-tight">{{ fact.value }}</dd>
+                    <dd v-if="fact.note" class="mt-1 text-sm text-muted">{{ fact.note }}</dd>
+                </div>
+            </dl>
+        </section>
+
+        <!-- AI work spotlight -->
+        <section class="mt-5 grid gap-8 rounded-2xl bg-accent-soft p-6 md:grid-cols-[1fr_minmax(0,20rem)] md:items-center md:p-10" aria-labelledby="spotlight-heading">
+            <div>
+                <p class="label flex items-center gap-2 !text-ink">
+                    <span class="size-2 shrink-0 rounded-full bg-sun" aria-hidden="true"></span>
+                    {{ content.spotlight.label }}
+                </p>
+                <h2 id="spotlight-heading" class="mt-4 text-3xl md:text-5xl">{{ content.spotlight.title }}</h2>
+                <p class="mt-4 max-w-2xl">{{ content.spotlight.description }}</p>
+                <p class="mt-4 font-mono text-xs leading-relaxed text-muted">{{ content.spotlight.stack.join(' · ') }}</p>
+                <NuxtLink to="/work-experience" class="mt-5 inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline">
+                    See Work Experience
+                    <ArrowRight class="size-4" aria-hidden="true" />
+                </NuxtLink>
+            </div>
+            <ul class="grid grid-cols-2 gap-3" aria-label="Record types collected">
+                <li v-for="record in content.spotlight.records" :key="record" class="rounded-xl bg-surface p-4 font-display text-lg font-semibold leading-tight tracking-tight">
+                    {{ record }}
+                </li>
+            </ul>
+        </section>
+
+        <!-- GitHub -->
+        <section class="mt-5 rounded-2xl border border-line bg-surface p-5 md:p-7" aria-labelledby="github-heading">
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+                <h2 id="github-heading" class="text-2xl">GitHub Contributions</h2>
+                <a :href="social.github.value" target="_blank" rel="me noopener" class="inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline">
+                    See Reference
+                    <ArrowUpRight class="size-4" aria-hidden="true" />
+                </a>
+            </div>
+            <div class="mt-4 overflow-x-auto">
+                <img
+                    :src="content.chartSrc"
+                    alt="GitHub contribution chart for marcelooblan2016, showing activity over the past year"
+                    width="663"
+                    height="104"
+                    loading="lazy"
+                    class="github-chart h-auto w-full min-w-[640px]"
+                >
+            </div>
+        </section>
+
+        <!-- Latest works -->
+        <section class="mt-20" aria-labelledby="work-heading">
+            <div class="flex items-end justify-between gap-4">
+                <h2 id="work-heading" class="section-title">Latest Works</h2>
+                <NuxtLink to="/portfolio" class="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-accent hover:underline">
+                    See More
+                    <ArrowRight class="size-4" aria-hidden="true" />
+                </NuxtLink>
+            </div>
+            <div class="mt-8 grid gap-5 md:grid-cols-2">
+                <ProjectCard v-for="project in featuredProjects" :key="project.slug" :project="project" />
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="mt-20" aria-labelledby="testimonials-heading">
+            <h2 id="testimonials-heading" class="section-title">What people say</h2>
+            <div class="mt-8 gap-5 md:columns-2">
+                <figure v-for="testimonial in testimonials" :key="testimonial.name" class="mb-5 break-inside-avoid rounded-2xl border border-line bg-surface p-6">
+                    <blockquote class="text-[0.975rem]">{{ testimonial.message.replace(/^"|"\s*$/g, '').trim() }}</blockquote>
+                    <figcaption class="mt-4 border-t border-line pt-3">
+                        <span class="block font-medium">{{ testimonial.name }}</span>
+                        <span v-if="testimonial.position" class="block text-sm text-muted">{{ testimonial.position }}</span>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="mt-20 rounded-3xl bg-accent p-8 text-on-accent md:p-12">
+            <h2 class="text-4xl md:text-6xl">Let's Connect</h2>
+            <p class="mt-4 max-w-xl text-lg">Have a project, a role, or a legacy app that needs modernizing? Send me a message.</p>
+            <NuxtLink to="/contact" class="mt-6 inline-flex items-center gap-2 rounded-full bg-on-accent px-5 py-3 font-medium text-accent transition-opacity hover:opacity-90">
+                Contact Me
+                <ArrowRight class="size-4" aria-hidden="true" />
+            </NuxtLink>
+        </section>
     </div>
 </template>
-<script>
-import global from '@utils/global.js';
-import VLazyImage from "v-lazy-image";
+<script setup lang="ts">
+import { ArrowRight, ArrowUpRight, Download, Github, Mail } from 'lucide-vue-next'
+import { content, featuredProjects, visibleProjects } from '@utils/content.js'
 
-export default {
-    components: {
-        VLazyImage
-    },
-    mixins: [global],
-    setup () {
-        return {};
-    },
-    computed: {
-        portfolioItems () {
+const { person, social, testimonials, experiences } = content
 
-            return this.portfolios.slice(0, 2);
-        }
-    },
+const remoteCount = experiences.filter((experience) => experience.type === 'Remote').length
 
-    data () {
-        return {};
-    }
-}
+const facts = [
+    { label: 'Experience', value: '14+ years' },
+    { label: 'Companies', value: experiences.length, note: `${remoteCount} US (remote), ${experiences.length - remoteCount} PH (office)` },
+    { label: 'Projects', value: visibleProjects.length },
+    { label: 'Core stack', value: 'Laravel, Vue, PHP' },
+]
+
+usePageSeo({
+    title: 'Marcelo Oblan III | Senior Full-Stack Engineer, Laravel & Vue',
+    description: 'Marcelo Oblan III is a Senior Full-Stack Engineer with 14+ years building SaaS, AI integrations and automation with Laravel, Vue, Claude and OpenAI. Remote.',
+    path: '/',
+    schema: [{
+        '@type': 'ProfilePage',
+        url: 'https://moblan.dev/',
+        name: `${person.fullName} | Senior Full-Stack Engineer`,
+        mainEntity: { '@id': personSchema['@id'] },
+    }],
+})
 </script>

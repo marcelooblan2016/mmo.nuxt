@@ -1,45 +1,28 @@
 <template>
-	<div class="mt-[3em]">
-        <div class="mb-[2em] w-full">
-			<div class="flex sm:h-auto">
-                <div class="m-auto w-full">
-                    <!-- Name -->
-                    <h1 class="text-4xl text-center font-normal leading-normal mb-2 mt-[3rem] md:mt-[3rem]">
-                        <span class="title-font text-gray-500 dark:text-gray-300">Technical Skills</span>
-                        <span class="text-yellow-500">
-                            <el-icon class="align-middle mx-2 "><Cpu /></el-icon>
-                        </span>
-                    </h1>
-					<hr class="my-2 h-px border-dashed border-2 border-slate-300" />
-					<div class="grid md:grid-cols-2 gap-3 text-gray-700 dark:text-gray-300">
-						<template v-for="skill in skills">
-							<div class="p-5 min-h-[100px] bg-[rgba(255,255,255,0.6)] dark:bg-[rgba(255,255,255,0.1)] dark:shadow-[10px_10px_0px_0px_rgba(255,255,255,0.5)] border border-2 border-gray-100] border-3 rounded-md shadow-[10px_10px_0px_0px_rgba(0,0,0,0.5)] text-center mb-2">
-								<div class="px-3 md:px-[2em]">
-									<!-- Skill Type-->
-									<h2 class="text-2xl text-left font-normal leading-normal mt-0 mb-2" v-text="skill.type"></h2>
-									<!-- Skill Details -->
-									<template v-for="list in skill.lists">
-										<p v-html="`<span class='fa fa-minus text-gray-400'></span>&nbsp;` + list" class="text-left"></p>
-									</template>
-								</div>
-							</div>
-						</template>
-					</div>      
-                </div>
-			</div>
-		</div>
-	</div>
-</template>
-<script lang="ts">
-import global from '@utils/global.js';
-export default {
-    mixins: [global],
-    setup () {
-        useHead({
-            title: 'Skills | Marcelo Oblan',
-        })
+    <div>
+        <PageIntro title="Technical Skills" crumb="Skills">
+            A full-stack toolkit centered on Laravel, Vue and AI tooling, from the database and API to deployment.
+        </PageIntro>
 
-        return {};
-    },
-}
+        <div class="grid gap-5 md:grid-cols-2">
+            <section v-for="group in content.skills" :key="group.type" class="rounded-2xl border border-line bg-surface p-6 md:last:odd:col-span-2">
+                <h2 class="text-2xl">{{ group.type }}</h2>
+                <ul class="mt-4 flex flex-wrap gap-2">
+                    <li v-for="skill in group.lists" :key="skill" class="rounded-lg bg-accent-soft px-3 py-1 text-sm">
+                        {{ skill }}
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</template>
+<script setup lang="ts">
+import { content } from '@utils/content.js'
+
+usePageSeo({
+    title: 'Technical Skills: AI, Laravel, Vue, Nuxt | Marcelo Oblan III',
+    description: 'Technical skills of Marcelo Oblan III: Claude, OpenAI, Gemini, Playwright, Stagehand, Laravel, PHP, Vue.js, Nuxt, TypeScript, Node.js, MySQL, Docker and AWS.',
+    path: '/skills',
+    crumb: 'Skills',
+})
 </script>

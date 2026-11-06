@@ -16,10 +16,10 @@ mmo.nuxt/
 │
 ├── shared/                  # 📁 Shared utilities & logic
 │   ├── utils/               # Utility functions & mixins
-│   │   └── global.js        # Global mixin (shared data)
+│   │   └── content.js       # All site content and content helpers
 │   └── README.md
 │
-├── server/                  # 📁 Server routes & logic
+├── server/                  # 📁 Laravel API (contact form)
 ├── public/                  # Static files (images, icons)
 │
 ├── nuxt.config.ts           # Nuxt configuration
@@ -47,8 +47,7 @@ alias: {
 
 **Usage in components:**
 ```javascript
-import global from '@utils/global.js';
-// Instead of: import global from '~/mixins/global.js';
+import { content } from '@utils/content.js';
 ```
 
 ### ✅ Auto-imports
@@ -59,9 +58,9 @@ import global from '@utils/global.js';
 **Example:**
 ```vue
 <!-- No import needed! -->
-<Header.Menu />
-<Footer.Index />
-<Portfolio />
+<HeaderMenu />
+<Footer />
+<ProjectCard />
 ```
 
 ## Directory Explanations
@@ -70,7 +69,7 @@ import global from '@utils/global.js';
 Contains all user-facing application code:
 - **`app.vue`** - Root component wrapper
 - **`components/`** - Reusable Vue components
-  - Folder structure creates dot-notation naming (e.g., `Header/Menu.vue` → `Header.Menu`)
+  - Folder structure sets the component name (e.g., `Header/Menu.vue` → `HeaderMenu`)
 - **`pages/`** - File-based routing
   - `index.vue` → `/`
   - `portfolio.vue` → `/portfolio`
@@ -82,10 +81,10 @@ Contains all user-facing application code:
 ### `/shared` - Shared Logic
 Centralized place for code used across the application:
 - **`utils/`** - Utility functions, mixins, and helpers
-  - `global.js` - Global mixin with portfolio, skills, and testimonial data
+  - `content.js` - All site content (profile, portfolio, skills, experience, testimonials)
 
-### `/server` - Backend Routes
-Server-side logic and API routes (currently empty but ready for use).
+### `/server` - Laravel API
+Standalone Laravel app. The contact form posts to its `POST /api/contact` route.
 
 ### `/public` - Static Files
 Images, icons, and other static assets served directly.
@@ -97,7 +96,8 @@ Routes are automatically generated from files in `app/pages/`:
 ```
 app/pages/
 ├── index.vue              → / (home)
-├── portfolio.vue          → /portfolio
+├── portfolio/index.vue    → /portfolio
+├── portfolio/[slug].vue   → /portfolio/:slug (one page per project)
 ├── skills.vue             → /skills
 └── work-experience.vue    → /work-experience
 ```
@@ -116,6 +116,9 @@ npm run preview
 
 # Generate static site
 npm run generate
+
+# Regenerate public/sitemap.xml and public/llms.txt after content changes
+npm run seo:generate
 ```
 
 ## Migration Notes
@@ -124,7 +127,6 @@ This structure was migrated from Nuxt 3 default layout:
 - Old `components/` → `app/components/`
 - Old `pages/` → `app/pages/`
 - Old `layouts/` → `app/layouts/`
-- Old `mixins/global.js` → `shared/utils/global.js`
 - Root `app.vue` → `app/app.vue`
 
 All imports have been updated to use the new `@utils/` alias.
@@ -139,8 +141,5 @@ All imports have been updated to use the new `@utils/` alias.
 
 ## Future Improvements
 
-- Consider migrating from mixins to Vue 3 Composables
-- Move global data to Pinia store
-- Create specific composables for features
 - Implement server middleware in `/server`
 

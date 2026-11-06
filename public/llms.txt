@@ -1,0 +1,105 @@
+# Marcelo Oblan III
+
+> Senior Full-Stack Engineer with 14+ years of experience building SaaS, AI integrations and automation with Laravel and Vue. Remote, Pacific time.
+
+Senior Full-Stack Engineer with 14+ years of experience building, scaling, and maintaining production-grade applications across web, mobile and browser extensions. Experienced across SaaS, eCommerce, and network-based systems, with a strong focus on modernizing large, long-running applications while ensuring stability, performance, and scalability.
+
+## Pages
+
+- [About](https://moblan.dev/): Profile, GitHub activity, latest works and testimonials
+- [Portfolio](https://moblan.dev/portfolio): 20 projects
+- [Skills](https://moblan.dev/skills): Technical skills by category
+- [Work Experience](https://moblan.dev/work-experience): Career history
+- [Contact](https://moblan.dev/contact): Contact form and availability
+- [Resume](https://moblan.dev/resume.pdf): Resume PDF
+
+## Contact
+
+- Email: marcelo.oblan2016@gmail.com
+- Hours: Monday - Friday, 1:00 PM - 11:00 PM Pacific (PDT, UTC-7) / 4:00 AM - 2:00 PM Philippines (PHT, UTC+8)
+- Github: https://github.com/marcelooblan2016
+- Facebook: https://www.facebook.com/Mr.AllTimeHigh
+- Instagram: https://www.instagram.com/marxoblan/
+- LinkedIn: https://www.linkedin.com/in/marcelo-oblan-2016/
+
+## Skills
+
+- AI & Automation: Claude (Anthropic), OpenAI / ChatGPT, Google Gemini, Playwright, Stagehand, Chrome Extensions
+- Front-End: Javascript, JQuery, Vue.js / Vuex, Inertia.js, Nuxt.js, TypeScript, Alpine.js, CSS / SCSS, TailwindCSS, Bootstrap, Wordpress
+- Back-End: PHP (Core PHP, Laravel, Lumen, Livewire, CodeIgniter), Node.js
+- Database: MySQL, PostgreSQL
+- DevOps: Github Actions: CI/CD, Envoyer, Laravel Forge, Netlify, Docker, Zero Downtime Deployment, Digital Ocean, AWS (S3, EC2), Namecheap
+- Management: Jira, Trello, Teamwork, Asana
+- Others: TDD (PHPUNIT), AGILE, Git / Git Flow, Github, Bitbucket, NPM, Command Line / SSH, SEO, Linux (Ubuntu, Centos, Amazon Linux), Hosting / Deployment: AWS, Digital Ocean, Namecheap, Hostinger, Docker Hub
+
+## Highlight
+
+AI-driven property records scraper (AI in production · Spearheaded at AFX Research): Collects deeds, mortgages, liens and assessor records from county sites. A Node.js scraping service, with Laravel initiating requests and auditing results, built on Chrome-extension replay for anti-bot bypass, Playwright + Stagehand automation, and user-trained scraping recipes. Users record county sites by selecting elements, with AI picking the correct record from search results.
+
+## Work Experience
+
+### Senior Full-Stack Developer, AFX Research, LLC (Nov 2023 - Present)
+
+San Luis Obispo, California, United States · Remote
+
+- Spearheaded an AI-driven property records scraper. Collects deeds, mortgages, liens and assessor records from county sites. A Node.js scraping service, with Laravel initiating requests and auditing results, built on Chrome-extension replay for anti-bot bypass, Playwright + Stagehand automation, and user-trained scraping recipes. Users record county sites by selecting elements, with AI picking the correct record from search results.
+- Developed cross-platform mobile applications (iOS & Android) using NativePHP, enabling clients and vendors to seamlessly submit and track title search orders.
+- Developed a Swift-based mobile widget app for the company, enabling real-time monitoring of key dashboard metrics.
+- Team member as a developer at documerge.ai primarily focuses on integration tasks, implementing new features, and bug fixing.
+- Led the upgrade of large legacy applications from Nuxt 2 to Nuxt 3, enhancing performance, maintainability, and future-proofing the technology stack.
+- Stack: Laravel, Vue.js, Inertia.js, Nuxt.js (echo, pusher), MySql, Tailwind, Git, Node.js, Playwright, Stagehand, Chrome Extensions, Claude, OpenAI
+
+### Software Engineer / Full-Stack, AllCars.com (May 2020 - Nov 2023)
+
+Webster, New York, United States · Remote
+
+- Develop a platform for purchasing and selling pre-owned vehicles on the internet. This project involves generating novel functionalities, ensuring smooth operation, resolving issues, and enhancing performance. The technology stack includes Laravel and Vue.js, and the final product will be deployed after completion.
+- Stack: Laravel (elastic search), Vue.js / Vuex, Javascript, JQuery, MySql, Bootstrap, Sass/Scss, Envoyer, Wordpress (Sage root), Node.js, Stripe, Twilio, Git / Git Flow, LiquidWeb, Amazon: S3, CentOS
+
+### Laravel Web Developer, DiegoDev Group, LLC (Apr 2019 - Apr 2020)
+
+San Diego, California, United States · Remote
+
+- I collaborated with a team to develop an e-commerce website called CarsZoom, utilizing the Laravel framework. Additionally, I was involved in the development of the SDPHP blog website.
+- Stack: Laravel, Vue.js, Javascript, JQuery, MySql, Bootstrap
+
+### Back End Software Engineer, Yondu, Inc. (Sep 2016 - Sep 2018)
+
+Bonifacio Global City, Taguig, Metro Manila, Philippines · On-Site
+
+- I was part of a committed team working on the wifi project (Wifi Hotspots) for the client Globe.
+- We used the Agile method for development.
+- The project was primarily implemented in public areas such as malls, MRT/LRT stations, and airports. My role in the project was as a backend developer for the API.
+- Stack: Laravel, Lumen, JQuery, MySql, Bootstrap
+
+### Full-Stack Web Developer, International Payments Processing (Aug 2012 - Sep 2016)
+
+Puerto Princesa City, Palawan, Philippines · On-Site
+
+- Company started from 4 people to more than 50 people.
+- One of the 4 people as a web developer. In mid 2015 , I have become a Team Leader of the team.
+- Develop their website, created a CMS, Chat App exclusively for company, Some New-to-me Projects like Online Refund System and Exclusive Payment Gateway.
+- Stack: PHP, MySql, Javascript, JQuery
+
+## Projects
+
+- [Fortbyte.io](https://moblan.dev/portfolio/fortbyte-io) (Oct 2025, No longer live): A lightweight SaaS platform for secure file sharing, allowing users to upload files and generate links that automatically expire and permanently delete after a set time. Designed for lawyers, HR teams, and small businesses, it provides a simple, confidential, and efficient alternative to traditional file-sharing tools.
+- [Filechamp.io](https://moblan.dev/portfolio/filechamp-io) (Sep 2023 – Jan 2025): An online file conversion and optimization tool that makes it easy to convert documents and images to various formats. You can resize images before converting them and process multiple files at once. The platform also allows you to download all your converted files together in a zip archive. With an intuitive interface and a focus on user privacy.
+- [Paralanx.com](https://moblan.dev/portfolio/paralanx-dot-com) (May 2023, No longer live): all-in-one website, featuring a diverse range of integrated tools such as paraphraser, grammar fixer, and summarizer, all powered by ChatGPT. Enhance your blogging experience with its custom-built CMS, optimized with GPT technology for seamless blog creation
+- [Crypto Bot Trader](https://moblan.dev/portfolio/crypto-bot-trader) (Jan 2022 – Feb 2022): The process of exchanging ERC-20 Tokens (purchasing/selling) depending on the market's condition using a bot strategy, achieved through the utilization of MetaMask and Puppeteer.
+- [AllCars](https://moblan.dev/portfolio/allcars) (Aug 2019 – 2023): A platform for purchasing and selling pre-owned vehicles in the online marketplace.
+- [Wild Alert](https://moblan.dev/portfolio/wild-alert) (Nov 2019 – Feb 2020): A Platform Allows ranger to track wildlife report with geolocation & Identify species. Rangers used their phone to report through mobile app into the server.
+- [Tourist Tracker](https://moblan.dev/portfolio/tourist-tracker) (Mar 2019 – Apr 2019): Tourist Information Management - Collect, View Statistics, Voucher Based Tours
+- [City Tourism Tracker](https://moblan.dev/portfolio/city-tourism-tracker) (Jan 2019): Crm for staff to track records of all local business within the city.
+- [Flow CMS](https://moblan.dev/portfolio/flow-cms) (Nov 2018 – Dec 2018): Created a cms for a private company that allows them to manage/monitor the work orders.
+- [Danspira.com](https://moblan.dev/portfolio/danspira) (Aug 2018 – Sep 2018): Created a parallax wordpress plugin on this site, A portfolio website.
+- [Online Shop](https://moblan.dev/portfolio/online-shop) (Jul 2018 – Sep 2018): an e-commerce for goods/item
+- [Morningfetch.com](https://moblan.dev/portfolio/morningfetch) (Apr 2018 – May 2018): A wordpress (mobile responsive) website, create/modify plugins , customized themes. A website that will provide entertainment & knowledge.
+- [theAwesomeAgency.com](https://moblan.dev/portfolio/the-awesome-agency) (May 2018): A static responsive single page website that provides some information about an agency and their service.
+- [Project Wifi](https://moblan.dev/portfolio/project-wifi) (Sep 2016): A Platform, Captive Portal for Konekt,Gowifi. It gives internet to the user(s) via wifi hotspot. They are usually installed in malls, mrt station(s), airport or any public place for public use.
+- [IPP Payment gateway](https://moblan.dev/portfolio/ipp-payment-gateway) (May 2016): Payment Gateway that allow(s) online merchant to transfer the payment from their customer to their bank account(s). It involves Accounting System, CRM for Merchant(s) , CRM for Staff(s) , XMLAPI - (Integrated in JETPAY | TRUSTSPAY PROCESSOR)
+- [PWEBEX - Pluto Web Explorer](https://moblan.dev/portfolio/pwebex) (Jun 2015): Webbased FTP without ftp account(s). Where you can upload,rename, download , delete file & delete, rename, remove directory in your ftp host/server.
+- [MLG Tours & Travel](https://moblan.dev/portfolio/mlg-tours-and-travel) (Jan 2016): A Travel & Tours (Modified Wordpress theme). It has a cart system with integrated Paypal payment.
+- [Citadel Bed & Breakfast](https://moblan.dev/portfolio/citadel-bed-and-breakfast) (Jan 2013): A Bed & Breakfast where information about the institution is shown.Customer can also reserve a room in realtime as it has a online reservation system with cart & the administrator can manage everything about his room(s). Payment is integrated via Paypal & Migs Payment gateway.
+- [IPP Chat](https://moblan.dev/portfolio/ipp-chat) (Jul 2015): Chat with user(s) depending on their AccountType, Join group and chat with them.
+- [iCAN4Consumers](https://moblan.dev/portfolio/ican4consumers) (Jan 2013): Online Refund, It allow(s) registered merchant's customer to have a refund by using iCan4consumers. Consumer will be able to send a request of refund depending on their merchant's payment gateway.
