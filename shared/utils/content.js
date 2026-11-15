@@ -1,6 +1,6 @@
 // Spearheaded at AFX Research. Company property, so it's a career highlight rather than a portfolio entry.
-const RECORDS_SCRAPER_TITLE = 'AI-driven property records scraper';
-const RECORDS_SCRAPER_DETAILS = 'Collects deeds, mortgages, liens and assessor records from county sites. A Node.js scraping service, with Laravel initiating requests and auditing results, built on Chrome-extension replay for anti-bot bypass, Playwright + Stagehand automation, and user-trained scraping recipes. Users record county sites by selecting elements, with AI picking the correct record from search results.';
+const RECORDS_SCRAPER_TITLE = 'AI-powered title research automation';
+const RECORDS_SCRAPER_DETAILS = 'Designed and led an AI-powered title research automation system covering 1,000+ of 3,660 U.S. recording jurisdictions, using LLMs to select and retrieve the correct deeds, mortgages, and liens. Built an AI audit pipeline that verifies retrieved documents against on-file records and a compliance classifier that excludes sites prohibiting automated access.';
 
 // Single source of truth for all site content. Imported by pages, components and
 // the SEO composable, so copy and structured data can't drift apart.
@@ -35,7 +35,8 @@ export const content = {
         label: 'AI in production · Spearheaded at AFX Research',
         title: RECORDS_SCRAPER_TITLE,
         description: RECORDS_SCRAPER_DETAILS,
-        records: ['Deeds', 'Mortgages', 'Liens', 'Assessor records'],
+        coverage: { value: '1,000+', label: 'of 3,660 U.S. recording jurisdictions' },
+        records: ['Deeds', 'Mortgages', 'Liens'],
         stack: ['Node.js', 'Laravel', 'Playwright', 'Stagehand', 'Claude', 'OpenAI'],
     },
     social: {
@@ -142,7 +143,7 @@ export const content = {
             time_frame: "Nov 2023 - Present",
             title: "Senior Full-Stack Developer",
             description: [
-                `Spearheaded an ${RECORDS_SCRAPER_TITLE}. ${RECORDS_SCRAPER_DETAILS}`,
+                RECORDS_SCRAPER_DETAILS,
                 "Developed cross-platform mobile applications (iOS & Android) using NativePHP, enabling clients and vendors to seamlessly submit and track title search orders.",
                 "Developed a Swift-based mobile widget app for the company, enabling real-time monitoring of key dashboard metrics.",
                 "Team member as a developer at documerge.ai primarily focuses on integration tasks, implementing new features, and bug fixing.",
