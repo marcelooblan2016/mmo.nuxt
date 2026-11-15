@@ -86,11 +86,17 @@
                     <ArrowRight class="size-4" aria-hidden="true" />
                 </NuxtLink>
             </div>
-            <ul class="grid grid-cols-2 gap-3" aria-label="Record types collected">
-                <li v-for="record in content.spotlight.records" :key="record" class="rounded-xl bg-surface p-4 font-display text-lg font-semibold leading-tight tracking-tight">
-                    {{ record }}
-                </li>
-            </ul>
+            <div class="grid grid-cols-3 gap-3">
+                <p class="col-span-3 rounded-xl bg-surface p-4">
+                    <span class="block font-display text-4xl font-semibold tracking-tight">{{ content.spotlight.coverage.value }}</span>
+                    <span class="mt-1 block text-sm text-muted">{{ content.spotlight.coverage.label }}</span>
+                </p>
+                <ul class="col-span-3 flex flex-wrap gap-2" aria-label="Record types retrieved">
+                    <li v-for="record in content.spotlight.records" :key="record" class="rounded-full bg-surface px-4 py-2 font-display font-semibold tracking-tight">
+                        {{ record }}
+                    </li>
+                </ul>
+            </div>
         </section>
 
         <!-- GitHub -->
